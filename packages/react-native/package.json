@@ -1,0 +1,24 @@
+{
+  "name": "@exemplar/react-native",
+  "version": "0.0.1",
+  "description": "React Native configs for storybook",
+  "main": "index.js",
+  "homepage": "https://github.com/godaddy/exemplar",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:godaddy/exemplar.git"
+  },
+  "keywords": [
+    "storybook",
+    "react",
+    "react-native"
+  ],
+  "author": "GoDaddy.com Operating Company, LLC",
+  "contributors": [
+    "Jason Cline <jcline@godaddy.com>"
+  ],
+  "license": "MIT"
+}

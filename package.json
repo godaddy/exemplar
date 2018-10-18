@@ -1,0 +1,29 @@
+{
+  "name": "exemplar",
+  "version": "0.0.1",
+  "description": "Storybook rocket fuel to launch structured examples of React & React Native components",
+  "private": true,
+  "scripts": {
+    "publish:react": "mono --publish react",
+    "publish:react-native": "mono --publish react-native",
+    "test:react": "mono --test react",
+    "test:react-native": "mono --test react-native",
+    "test": "mono --test",
+    "publish": "mono --publish",
+    "install": "mono --install && mono --link"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:godaddy/exemplar.git"
+  },
+  "keywords": [
+    "storybook",
+    "react",
+    "react-native"
+  ],
+  "author": "GoDaddy.com Operating Company, LLC",
+  "contributors": [
+    "Jason Cline <jcline@godaddy.com>"
+  ],
+  "license": "MIT"
+}
