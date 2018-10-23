@@ -25,5 +25,8 @@
   "contributors": [
     "Jason Cline <jcline@godaddy.com>"
   ],
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "mono-repos": "^0.1.1"
+  }
 }
