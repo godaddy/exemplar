@@ -2,9 +2,12 @@
   "name": "@exemplar/react",
   "version": "0.0.1",
   "description": "React web configs for storybook",
-  "main": "index.js",
+  "browser": "./lib",
+  "main": "./lib",
+  "module": "./index",
   "homepage": "https://github.com/godaddy/exemplar",
   "scripts": {
+    "build": "babel ./index.js ./addons.js decorators/*.js -d ./lib",
     "test": "echo \"Error: no test specified\" && exit"
   },
   "repository": {
@@ -18,7 +21,39 @@
   ],
   "author": "GoDaddy.com Operating Company, LLC",
   "contributors": [
+    "Dustin Savery <dsavery@godaddy.com>",
     "Jason Cline <jcline@godaddy.com>"
   ],
-  "license": "MIT"
+  "license": "MIT",
+  "babel": {
+    "plugins": [
+      "transform-object-rest-spread"
+    ],
+    "presets": [
+      "env",
+      "react"
+    ]
+  },
+  "peerDependencies": {
+    "@storybook/react": "3.x.x",
+    "react": "16.x.x",
+    "react-dom": "16.x.x"
+  },
+  "devDependencies": {
+    "@storybook/react": "^3.4.11",
+    "babel-cli": "^6.23.x",
+    "babel-plugin-transform-object-rest-spread": "^6.23.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-react": "^6.24.1",
+    "babel-register": "^6.23.x",
+    "react": "^16.3.2",
+    "react-dom": "^16.3.2"
+  },
+  "dependencies": {
+    "@storybook/addon-a11y": "^3.4.11",
+    "@storybook/addon-actions": "^3.4.11",
+    "@storybook/addon-console": "^1.0.4",
+    "@storybook/addon-knobs": "^3.4.11",
+    "@storybook/addon-options": "^3.4.11"
+  }
 }
