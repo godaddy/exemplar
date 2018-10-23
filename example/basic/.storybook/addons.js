@@ -1,1 +1,6 @@
-import { Addons } from '@exemplar/react';
+import '@storybook/addons';
+import '@storybook/addon-a11y/register';
+import '@storybook/addon-actions/register';
+import '@storybook/addon-console';
+import '@storybook/addon-knobs/register';
+import '@storybook/addon-options/register';
