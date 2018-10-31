@@ -1,0 +1,33 @@
+{
+  "name": "StorybookExample",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node node_modules/react-native/local-cli/cli.js start",
+    "ios": "node node_modules/react-native/local-cli/cli.js run-ios",
+    "ios:storybook": "node node_modules/react-native/local-cli/cli.js run-ios --entry-point storybook.js",
+    "test": "jest",
+    "storybook": "storybook start"
+  },
+  "dependencies": {
+    "react": "16.6.0-alpha.8af6728",
+    "react-native": "0.57.4"
+  },
+  "devDependencies": {
+    "babel-jest": "23.6.0",
+    "jest": "23.6.0",
+    "metro-react-native-babel-preset": "0.48.1",
+    "react-test-renderer": "16.6.0-alpha.8af6728",
+    "@storybook/react-native": "^4.0.0-rc.6",
+    "@storybook/addon-actions": "^4.0.0-rc.6",
+    "@storybook/addon-links": "^4.0.0-rc.6",
+    "@storybook/addons": "^4.0.0-rc.6",
+    "babel-core": "^6.26.3",
+    "babel-runtime": "^6.26.0",
+    "react-dom": "16.6.0-alpha.8af6728",
+    "prop-types": "^15.6.2"
+  },
+  "jest": {
+    "preset": "react-native"
+  }
+}
