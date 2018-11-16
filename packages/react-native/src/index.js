@@ -6,10 +6,6 @@
  * @public
  */
 exports.start = function start(env) {
-  if (env.files.length > 1) {
-    throw new Error('Exemplar: Only single files may be previewed at this time.');
-  }
-
   const Exemplar = require('./entry.js');
 
   return new Exemplar(env).start(function started(error) {

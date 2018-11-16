@@ -61,9 +61,6 @@ class ExemplarNative {
    */
   generate(done) {
     const storiesPath = path.resolve(this.env.packagePath, 'stories');
-    const componentPath = this.env.files.length
-      ? path.resolve(this.env.cwd, this.env.files[0])
-      : storiesPath;
 
     fs.readFile(path.join(__dirname, 'app.js'), 'utf-8', (appReadError, content) => {
       if (appReadError) {
@@ -72,7 +69,7 @@ class ExemplarNative {
       }
 
       content = handlebars.compile(content)({
-        targetFile: componentPath
+        targetFile: this.env.config
       });
 
       //
