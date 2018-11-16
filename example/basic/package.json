@@ -4,7 +4,7 @@
   "description": "Example structure for Exemplar",
   "private": true,
   "scripts": {
-    "exemplar": "start-storybook -p 9001 -c .storybook"
+    "exemplar": "start-storybook -p 9001"
   },
   "author": "GoDaddy.com Operating Company, LLC",
   "contributors": [
