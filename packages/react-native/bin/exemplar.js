@@ -44,21 +44,15 @@ cli.launch({ cwd: argv.cwd }, function (env) {
     throw new Error('No local `@exemplar/react-native` module found!');
   }
 
-  if (argv.android || argv.ios) {
-    installLocal(env.modulePath);
-  }
+  installLocal(env.modulePath);
 
   const exemplar = require(env.modulePath);
 
   env.progress = 'progress' in argv ? argv.progress : true;
   env.target = argv.target;
-  env.minify = argv.minify;
-  env.componentType = argv.cardType;
-  env.wrapperType = argv.wrapperType;
-  env.files = argv._;
+  env.config = argv.config || path.join(env.cwd, '.storybook', 'index.native.js');
   env.platform = argv.ios && 'ios' || argv.android && 'android' || 'ios';
   env.simVersion = argv.simulator || 'iPhone XS';
-  env.showKebab = argv.showKebab || true;
   env.host = argv.host || 'localhost';
   env.port = argv.port || 8080;
   env.sectionType = argv.sectionType || '';
@@ -69,6 +63,11 @@ cli.launch({ cwd: argv.cwd }, function (env) {
     console.error(`Error finding package root for cwd: ${env.cwd}`);
     throw err;
   }
+  if(!fs.exists(env.config)) {
+    console.error(`Error finding storybook config: ${env.config}`);
+    throw new Error(`Error finding storybook config: ${env.config}`);
+  }
+
   env.props = argv.props ? require(path.join(cwd, argv.props)) : null;
 
   exemplar.start(env);
