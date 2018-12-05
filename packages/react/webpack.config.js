@@ -1,4 +1,12 @@
+const { DefinePlugin } = require('webpack');
+const path = require('path');
+
 module.exports = {
+  plugins: [
+    new DefinePlugin({
+      EXEMPLAR_ROOT: `'${path.join(process.cwd(), 'stories', 'index.js')}'`
+    })
+  ],
   module: {
     rules: [
       {
