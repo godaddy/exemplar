@@ -23,7 +23,7 @@
     "url": "https://github.com/godaddy/exemplar/issues"
   },
   "homepage": "https://github.com/godaddy/exemplar#readme",
-  "dependencies": {
+  "peerDependencies": {
     "@storybook/addon-knobs": "^4.0.12",
     "@storybook/react": "^4.0.12"
   }
