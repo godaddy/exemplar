@@ -2,8 +2,9 @@ const { DefinePlugin } = require('webpack');
 const path = require('path');
 const fs = require('fs');
 
+const cwd = process.cwd();
+
 function listOfExamples() {
-  const cwd = process.cwd();
   return fs.readdirSync(path.join(cwd, 'examples'))
     .filter(f => f.match(/.js$/))
     .map(f => path.join(cwd, f))
@@ -12,7 +13,8 @@ function listOfExamples() {
 module.exports = {
   plugins: [
     new DefinePlugin({
-      EXEMPLAR_ROOT: `'${path.join(process.cwd(), 'stories', 'index.js')}'`,
+      EXEMPLAR_ROOT: `'${path.join(cwd, 'stories', 'index.js')}'`,
+      EXAMPLES_DIRECTORY: `'${path.join(cwd, 'examples')}'`,
       LIST_OF_EXAMPLES: JSON.stringify(listOfExamples())
     })
   ],
