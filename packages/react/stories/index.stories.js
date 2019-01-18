@@ -16,4 +16,6 @@ storiesOf('Button', module)
         😀 😎 👍 💯
       </span>
     </Button>
-  ));
+  ))
+  .add('EXEMPLAR_ROOT', () => <pre>{ EXEMPLAR_ROOT }</pre>)
+  .add('LIST_OF_EXAMPLES', () => <pre>{ LIST_OF_EXAMPLES }</pre>)
