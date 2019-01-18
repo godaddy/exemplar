@@ -6,18 +6,14 @@ function listOfExamples() {
   const cwd = process.cwd();
   return fs.readdirSync(path.join(cwd, 'examples'))
     .filter(f => f.match(/.js$/))
-    .map(f => path.join(cwd, f));
-}
-
-function parse(value) {
-  return `'${value}'`;
+    .map(f => path.join(cwd, f))
 }
 
 module.exports = {
   plugins: [
     new DefinePlugin({
-      EXEMPLAR_ROOT: parse(path.join(process.cwd(), 'stories', 'index.js')),
-      LIST_OF_EXAMPLES: parse(listOfExamples())
+      EXEMPLAR_ROOT: `'${path.join(process.cwd(), 'stories', 'index.js')}'`,
+      LIST_OF_EXAMPLES: JSON.stringify(listOfExamples())
     })
   ],
   module: {
