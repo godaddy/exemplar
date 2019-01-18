@@ -25,15 +25,22 @@
   },
   "homepage": "https://github.com/godaddy/exemplar#readme",
   "dependencies": {
+    "p-map": "^2.0.0",
     "webpack": "^4.28.4"
   },
   "devDependencies": {
     "@babel/core": "^7.2.2",
+    "@babel/plugin-syntax-dynamic-import": "^7.2.0",
     "@storybook/addon-actions": "^4.1.7",
     "@storybook/addon-knobs": "^4.1.7",
     "@storybook/addon-links": "^4.1.7",
     "@storybook/addons": "^4.1.7",
     "@storybook/react": "^4.1.7",
     "babel-loader": "^8.0.5"
+  },
+  "babel": {
+    "plugins": [
+      "@babel/plugin-syntax-dynamic-import"
+    ]
   }
 }
