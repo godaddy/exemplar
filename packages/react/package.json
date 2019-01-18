@@ -5,8 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "self": "start-storybook -p 6006"
   },
   "repository": {
     "type": "git",
@@ -25,7 +24,9 @@
     "url": "https://github.com/godaddy/exemplar/issues"
   },
   "homepage": "https://github.com/godaddy/exemplar#readme",
-  "dependencies": {},
+  "dependencies": {
+    "webpack": "^4.28.4"
+  },
   "devDependencies": {
     "@babel/core": "^7.2.2",
     "@storybook/addon-actions": "^4.1.7",
