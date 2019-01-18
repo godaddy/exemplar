@@ -1,9 +1,9 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 
-export default class Large extends Component {
+export default class Small extends Component {
   render() {
     return (
-      <Fragment>Hello!</Fragment>
+      <h3>{ this.props.children }</h3>
     );
   }
 }
