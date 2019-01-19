@@ -1,11 +1,11 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component, Fragment as F } from 'react';
 
 export default class MimicTitle extends Component {
   render() {
     return (
-      <Fragment>
+      <F>
         { document.title }
-      </Fragment>
+      </F>
     );
   }
 }

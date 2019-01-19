@@ -15,6 +15,7 @@ module.exports = {
     new DefinePlugin({
       EXEMPLAR_ROOT: `'${path.join(cwd, 'stories', 'index.js')}'`,
       EXAMPLES_DIRECTORY: `'${path.join(cwd, 'examples')}'`,
+      WEB_ONLY_DIRECTORY: `'${path.join(cwd, 'examples', 'web')}'`,
       LIST_OF_EXAMPLES: JSON.stringify(listOfExamples())
     })
   ],
