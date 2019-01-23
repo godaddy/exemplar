@@ -18,10 +18,18 @@ function requireAll(context) {
   });
 }
 
+const pkg = EX_PKG_JSON;
+
 const crossPlatform = requireAll(require.context(EX_CROSS_PLATFORM, true, /^\.\/.*\.js$/));
 const webOnly = requireAll(require.context(EX_WEB, true, /^\.\/.*\.js$/));
-
 const modules = crossPlatform.concat(webOnly);
+
+try {
+  if (EX_ENV_SCSS) require(EX_ENV_SCSS);
+} catch (ex) {
+  /* Ignore errors */
+  console.dir(ex);
+}
 
 modules.reduce((stories, example, i) => {
   const { source, Component } = example;
@@ -30,4 +38,4 @@ modules.reduce((stories, example, i) => {
   if (!Component || !Component.name) return stories;
 
   return stories.add(Component.name, () => React.createElement(Component));
-}, storiesOf('Dynamically Loaded Examples', module));
+}, storiesOf(pkg.name, module));
