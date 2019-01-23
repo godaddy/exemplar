@@ -7,7 +7,7 @@ const fs = require('fs');
  *
  * @param {String} request - The requested module path.
  * @param {Boolean} required - Whether or not the module is required.
- * @returns {String?} - The requested string, or null if the module was not required and not found.
+ * @returns {String?} - The requested string, or `''` if the module was not required and not found.
  */
 function resolveModule(request, required) {
   try {
@@ -20,6 +20,21 @@ function resolveModule(request, required) {
   }
 
   return `''`;
+}
+
+/**
+ * Resolves the given request for a module.
+ *
+ * @param {String[]} request - The requested module path.
+ * @param {Boolean} required - Whether or not the module is required.
+ * @returns {String?} - The requested string, or `''` if the module was not required and not found.
+ */
+function resolveModules(requests, required) {
+  const result = requests.find(request => {
+    return resolveModule(request, required) !== `''`;
+  });
+
+  return result || `''`;
 }
 
 /**
@@ -54,16 +69,15 @@ const dirs = {
   root: rootDir,
   crossPlatform: rootDir,
   webOnly: path.join(rootDir, 'web'),
-  env: path.join(rootDir, 'env')
+  setup: path.join(rootDir, '.setup')
 };
 
-//
-// TODO (@indexzero): strongly consider renaming
-// this from `examples/env` to `examples/shared`!
-//
 const env = {
-  scss: resolveModule(path.join(dirs.env, 'shared.scss')),
-  addons: resolveModule(path.join(dirs.env, 'addons.js'))
+  scss: resolveModules([
+    path.join(dirs.setup, 'shared.scss'),
+    path.join(dirs.setup, 'index.scss')
+  ]),
+  addons: resolveModule(path.join(dirs.setup, 'addons.js'))
 };
 
 module.exports = function (baseConfig, envName, webpackConfig) {
