@@ -33,7 +33,7 @@ try {
   if (EX_ENV_SCSS) require(EX_ENV_SCSS);
 } catch (ex) {
   /* Ignore errors */
-  console.dir(ex);
+  console.warn(ex);
 }
 
 modules.reduce((stories, example, i) => {
