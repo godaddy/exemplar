@@ -62,13 +62,15 @@ const dirs = {
 // this from `examples/env` to `examples/shared`!
 //
 const env = {
-  scss: resolveModule(path.join(dirs.env, 'shared.scss'))
+  scss: resolveModule(path.join(dirs.env, 'shared.scss')),
+  addons: resolveModule(path.join(dirs.env, 'addons.js'))
 };
 
 module.exports = function (baseConfig, envName, webpackConfig) {
   const definitions = {
     EX_CROSS_PLATFORM: resolveDir(dirs.crossPlatform),
     EX_WEB: resolveDir(dirs.webOnly),
+    EX_ADDONS: `'${env.addons}'`,
     EX_PKG_JSON: JSON.stringify({
       name: pkg.name,
       version: pkg.version
