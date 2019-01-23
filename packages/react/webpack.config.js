@@ -40,6 +40,8 @@ function resolveDir(request, required) {
     }
   }
 
+  // Return a wrapped empty string so it will be falsy
+  // when inserted via the DefinePlugin.
   return `''`;
 }
 
