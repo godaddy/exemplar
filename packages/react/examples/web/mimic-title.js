@@ -4,7 +4,7 @@ export default class MimicTitle extends Component {
   render() {
     return (
       <>
-        { document.title }
+        { document.title } dawg
       </>
     );
   }
