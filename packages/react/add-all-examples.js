@@ -19,10 +19,15 @@ function requireAll(context) {
 }
 
 const pkg = EX_PKG_JSON;
+const contexts = [
+  EX_CROSS_PLATFORM && require.context(EX_CROSS_PLATFORM, true, /^\.\/.*\.js$/),
+  EX_WEB && require.context(EX_WEB, true, /^\.\/.*\.js$/)
+].filter(Boolean);
 
-const crossPlatform = requireAll(require.context(EX_CROSS_PLATFORM, true, /^\.\/.*\.js$/));
-const webOnly = requireAll(require.context(EX_WEB, true, /^\.\/.*\.js$/));
-const modules = crossPlatform.concat(webOnly);
+const modules = contexts.reduce((all, context) => {
+  all.push.apply(all, requireAll(context));
+  return all;
+}, []);
 
 try {
   if (EX_ENV_SCSS) require(EX_ENV_SCSS);
