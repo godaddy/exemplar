@@ -5,7 +5,7 @@ import { storiesOf } from '@storybook/react';
  * Generate module from the given context. Taken directly from the wiki here
  * https://github.com/webpack/docs/wiki/context#context-module-api
  *
- * @param  {¯\_(ツ)_/¯} context some wizardy that require.context returns
+ * @param  {¯\_(ツ)_/¯} context some wizardry that require.context returns
  * @return {Example[]} A list of React.Components that can be rendered
  */
 function requireAll(context) {
