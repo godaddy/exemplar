@@ -11,7 +11,7 @@ const fs = require('fs');
  */
 function resolveModule(request, required) {
   try {
-    return require.resolve(request);
+    return `'${require.resolve(request)}'`;
   } catch (err) {
     if (required || err.code !== 'MODULE_NOT_FOUND') {
       console.error(`Error resolving request ${request}`);
@@ -19,7 +19,7 @@ function resolveModule(request, required) {
     }
   }
 
-  return null;
+  return `''`;
 }
 
 /**
@@ -70,7 +70,8 @@ module.exports = function (baseConfig, envName, webpackConfig) {
   const definitions = {
     EX_CROSS_PLATFORM: resolveDir(dirs.crossPlatform),
     EX_WEB: resolveDir(dirs.webOnly),
-    EX_ADDONS: `'${env.addons}'`,
+    EX_ADDONS: env.addons,
+    EX_ENV_SCSS: env.scss,
     EX_PKG_JSON: JSON.stringify({
       name: pkg.name,
       version: pkg.version
@@ -81,9 +82,7 @@ module.exports = function (baseConfig, envName, webpackConfig) {
   // Load SCSS when applicable
   // TODO (@indexzero): Make this configurable
   //
-  if (env.scss) {
-    definitions.EX_ENV_SCSS = `'${env.scss}'`;
-
+  if (env.scss !== `''`) {
     webpackConfig.module.rules.push({
       test: /\.scss$/,
       loaders: ['style-loader', 'css-loader', 'sass-loader'],
