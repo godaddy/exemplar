@@ -34,7 +34,8 @@ function resolveModules(requests, required) {
     return resolveModule(request, required) !== `''`;
   });
 
-  return result || `''`;
+  if (result) return `'${result}'`;
+  return `''`;
 }
 
 /**
