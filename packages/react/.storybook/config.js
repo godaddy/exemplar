@@ -1,7 +1,4 @@
-import { configure } from '@storybook/react';
-
-function loadStories() {
-  require('../add-all-examples');
-}
-
-configure(loadStories, module);
+//
+// Shim publicly exposed module
+//
+module.exports = require('../config.js');
