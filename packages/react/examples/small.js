@@ -1,9 +1,7 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-export default class Small extends Component {
-  render() {
-    return (
-      <h3>Small H3</h3>
-    );
-  }
-}
+const Small = () => (
+  <h3>Small H3</h3>
+);
+
+export default Small;

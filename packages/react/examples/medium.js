@@ -1,9 +1,7 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-export default class Medium extends Component {
-  render() {
-    return (
-      <h2>Medium H2</h2>
-    );
-  }
-}
+const Medium = () => (
+  <h2>Medium H2</h2>
+);
+
+export default Medium;

@@ -36,7 +36,7 @@ try {
   console.warn(ex);
 }
 
-modules.reduce((stories, example, i) => {
+modules.reduce((stories, example) => {
   const { source, Component } = example;
 
   // Do not attempt to load invalid or undefined example Components
