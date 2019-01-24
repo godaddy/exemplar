@@ -73,20 +73,22 @@ const dirs = {
   setup: path.join(rootDir, '.setup')
 };
 
-const env = {
+const setup = {
   scss: resolveModules([
     path.join(dirs.setup, 'shared.scss'),
     path.join(dirs.setup, 'index.scss')
   ]),
-  addons: resolveModule(path.join(dirs.setup, 'addons.js'))
+  addons: resolveModule(path.join(dirs.setup, 'addons.js')),
+  decorators: resolveModule(path.join(dirs.setup, 'decorators.js'))
 };
 
-module.exports = function (baseConfig, envName, webpackConfig) {
+module.exports = function (baseConfig, env, webpackConfig) {
   const definitions = {
     EX_CROSS_PLATFORM: resolveDir(dirs.crossPlatform),
     EX_WEB: resolveDir(dirs.webOnly),
-    EX_ADDONS: env.addons,
-    EX_ENV_SCSS: env.scss,
+    EX_SETUP_ADDONS: setup.addons,
+    EX_SETUP_DECORATORS: setup.decorators,
+    EX_SETUP_SCSS: setup.scss,
     EX_PKG_JSON: JSON.stringify({
       name: pkg.name,
       version: pkg.version
@@ -97,7 +99,7 @@ module.exports = function (baseConfig, envName, webpackConfig) {
   // Load SCSS when applicable
   // TODO (@indexzero): Make this configurable
   //
-  if (env.scss !== `''`) {
+  if (setup.scss !== `''`) {
     webpackConfig.module.rules.push({
       test: /\.scss$/,
       loaders: ['style-loader', 'css-loader', 'sass-loader'],

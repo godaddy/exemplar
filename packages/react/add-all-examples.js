@@ -30,7 +30,7 @@ const modules = contexts.reduce((all, context) => {
 }, []);
 
 try {
-  if (EX_ENV_SCSS) require(EX_ENV_SCSS);
+  if (EX_SETUP_SCSS) require(EX_SETUP_SCSS);
 } catch (ex) {
   /* Ignore errors */
   console.warn(ex);
