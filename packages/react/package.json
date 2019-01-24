@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "self": "start-storybook -p 6006"
+    "self": "node bin/start.js"
   },
   "repository": {
     "type": "git",
