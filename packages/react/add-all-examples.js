@@ -20,7 +20,7 @@ function requireAll(context) {
 
 const pkg = EX_PKG_JSON;
 const contexts = [
-  EX_CROSS_PLATFORM && require.context(EX_CROSS_PLATFORM, true, /^\.\/.*\.js$/),
+  // EX_CROSS_PLATFORM && require.context(EX_CROSS_PLATFORM, true, /^\.\/.*\.js$/),
   EX_WEB && require.context(EX_WEB, true, /^\.\/.*\.js$/)
 ].filter(Boolean);
 
@@ -36,11 +36,11 @@ try {
   console.warn(ex);
 }
 
-modules.reduce((stories, example) => {
+modules.reduce((stories, example, i) => {
   const { source, Component } = example;
 
   // Do not attempt to load invalid or undefined example Components
   if (!Component || !Component.name) return stories;
 
-  return stories.add(Component.name, () => React.createElement(Component));
+  return stories.add(`${Component.name} - ${i}`, () => React.createElement(Component));
 }, storiesOf(pkg.name, module));

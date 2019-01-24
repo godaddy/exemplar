@@ -110,5 +110,11 @@ module.exports = function (baseConfig, env, webpackConfig) {
   // Define the paths that exemplar will attempt to load
   webpackConfig.plugins.push(new DefinePlugin(definitions));
 
+  webpackConfig.resolve = {
+    alias: {
+      '@ux/uxcore2$': path.join(process.cwd(), 'examples', 'env', 'uxcore2.js')
+    }
+  };
+
   return webpackConfig;
 };
