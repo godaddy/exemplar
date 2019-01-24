@@ -13,6 +13,11 @@
 // DefinePlugin used today.
 //
 try {
+  //
+  // TODO (@crobbins): define a convention for the export shape
+  // from this configuration so that `examples/.setup/decorators.js`
+  // is not necessary for the simple case.
+  //
   require(`${process.env.STORYBOOK_CWD}/examples/.setup/addons.js`);
 } catch (ex) {
   console.dir(ex);
