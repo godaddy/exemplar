@@ -7,7 +7,7 @@ const fs = require('fs');
  *
  * @param {String} request - The requested module path.
  * @param {Boolean} required - Whether or not the module is required.
- * @returns {String?} - The requested string, or `''` if the module was not required and not found.
+ * @returns {String} - The requested string, or `''` if the module was not required and not found.
  */
 function resolveModule(request, required) {
   try {
@@ -27,7 +27,7 @@ function resolveModule(request, required) {
  *
  * @param {String[]} request - The requested module path.
  * @param {Boolean} required - Whether or not the module is required.
- * @returns {String?} - The requested string, or `''` if the module was not required and not found.
+ * @returns {String} - The requested string, or `''` if the module was not required and not found.
  */
 function resolveModules(requests, required) {
   const result = requests.find(request => {
@@ -43,7 +43,7 @@ function resolveModules(requests, required) {
  *
  * @param {String} request - The requested dir path.
  * @param {Boolean} required - Whether or not the directory is required.
- * @returns {String?} - The requested string, or null if the directory was not required and not found.
+ * @returns {String} - The requested string, or null if the directory was not required and not found.
  */
 function resolveDir(request, required) {
   try {

@@ -1,9 +1,7 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-export default class Large extends Component {
-  render() {
-    return (
-      <h1>Large H1</h1>
-    );
-  }
-}
+const Large = () => (
+  <h1>Large H1</h1>
+);
+
+export default Large;
