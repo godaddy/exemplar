@@ -28,9 +28,7 @@ build/Release
 node_modules
 dist
 cache.json
-versions.static.js
-versions.js
-test-palette.json
+.testout
 
 # IDE
 .idea
