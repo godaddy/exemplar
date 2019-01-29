@@ -64,28 +64,32 @@ function resolveDir(request, required) {
 /**
  * Get the contents of a JSON file
  *
- * @param  {String} required -  path to JSON file
+ * @param  {String} required - Full path to JSON file
  * @return {Object} - The requested object, {} if the file was not found.
  */
-function generateAliases(required) {
+function generateAliases(setupDir) {
   let data;
+  const required = path.join(setupDir, 'aliases.json');
+
   try {
     data = require(required);
   } catch(err) {
     if (err.code !== 'ENOENT') {
-      console.error(`Error resolving directory ${required}`);
+      console.error(`Error resolving JSON file: ${required}`);
       throw err;
     }
   }
 
   return Object
-    .entries(data)
+    .entries(data || {})
     .reduce((acc, [alias, file]) => {
+      //
       // Because we're specifying exact files we must pass a $ to webpack.resolve
       // https://webpack.js.org/configuration/resolve/
-      acc[`${alias}$`] = path.isAbsolute(file) ?
-        file :
-        path.join(cwd, 'examples', '.setup', file);
+      //
+      acc[`${alias}$`] = path.isAbsolute(file)
+        ? file
+        : path.join(setupDir, file);
 
       return acc;
     }, {});
@@ -94,7 +98,7 @@ function generateAliases(required) {
 const cwd = process.cwd();
 const rootDir = path.join(cwd, 'examples');
 const pkg = require(path.join(cwd, 'package.json'));
-const alias = generateAliases(path.join(cwd, 'examples', '.setup', 'aliases.json'));
+const alias = generateAliases(path.join(rootDir, '.setup'));
 
 const dirs = {
   root: rootDir,
@@ -109,22 +113,22 @@ const setup = {
     path.join(dirs.setup, 'index.scss')
   ]),
   addons: resolveModule(path.join(dirs.setup, 'addons.js')),
-  decorators: resolveModule(path.join(dirs.setup, 'decorators.js'))
+  config: resolveModule(path.join(dirs.setup, 'config.js'))
+};
+
+const definitions = {
+  EX_CROSS_PLATFORM: resolveDir(dirs.crossPlatform),
+  EX_WEB: resolveDir(dirs.webOnly),
+  EX_SETUP_ADDONS: setup.addons,
+  EX_SETUP_CONFIG: setup.config,
+  EX_SETUP_SCSS: setup.scss,
+  EX_PKG_JSON: JSON.stringify({
+    name: pkg.name,
+    version: pkg.version
+  })
 };
 
 module.exports = function (baseConfig, env, webpackConfig) {
-  const definitions = {
-    EX_CROSS_PLATFORM: resolveDir(dirs.crossPlatform),
-    EX_WEB: resolveDir(dirs.webOnly),
-    EX_SETUP_ADDONS: setup.addons,
-    EX_SETUP_DECORATORS: setup.decorators,
-    EX_SETUP_SCSS: setup.scss,
-    EX_PKG_JSON: JSON.stringify({
-      name: pkg.name,
-      version: pkg.version
-    })
-  };
-
   //
   // Load SCSS when applicable
   // TODO (@indexzero): Make this configurable
