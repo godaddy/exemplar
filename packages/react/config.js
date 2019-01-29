@@ -4,8 +4,8 @@ function loadStories() {
   require('./load-examples');
 }
 
-if (EX_SETUP_CONFIG) {
-  require(EX_SETUP_CONFIG);
+if (EX_SETUP_CONFIG) {  // eslint-disable-line no-undef
+  require(EX_SETUP_CONFIG);  // eslint-disable-line no-undef
 }
 
 configure(loadStories, module);

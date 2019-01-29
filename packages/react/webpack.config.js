@@ -1,18 +1,6 @@
 const debug = require('diagnostics')('exemplar:webpack');
 const { DefinePlugin } = require('webpack');
-const path = require('path');
-const fs = require('fs');
-
 const {
-  resolveModules,
-  resolveModule,
-  resolveDir
-} = require('./resolve');
-
-const {
-  cwd,
-  rootDir,
-  pkg,
   alias,
   dirs,
   setup,
