@@ -22,9 +22,9 @@ function requireAll(context) {
 const pkg = EX_PKG_JSON;
 const contexts = [
   // eslint-disable-next-line no-undef
-  EX_CROSS_PLATFORM && require.context(EX_CROSS_PLATFORM, true, /^\.\/.*\.js$/),
+  EX_CROSS_PLATFORM && require.context(EX_CROSS_PLATFORM, true, /^([a-zA-Z-_]+)\.js$/),
   // eslint-disable-next-line no-undef
-  EX_WEB && require.context(EX_WEB, true, /^\.\/.*\.js$/)
+  EX_WEB && require.context(EX_WEB, true, /^([a-zA-Z-_]+)\.js$/)
 ].filter(Boolean);
 
 const modules = contexts.reduce((all, context) => {
