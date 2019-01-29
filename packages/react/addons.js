@@ -1,16 +1,11 @@
 //
-// The **BOTTOM** of the rabbit hole: it is not possible to modify
-// the `webpack` configuration for the `storybook` “manager”. i.e.
-// the code outside the iFrame hosting stories
-// See: https://github.com/storybooks/storybook/blob/next/lib/core/src/server/manager/manager-webpack.config.js#L35-L60
+// Since Storybook addons require code in both:
 //
-// To work around this (for now until we patch @storybook/core), all
-// `start-storybook` commands must be executed with:
+// - ./.storybook/config.js
+// - ./.storybook/addons.js
 //
-// STORYBOOK_CWD="`cwd`" start-storybook
-//
-// This hooks into the existing `process.env` wiring in the hard-coded
-// DefinePlugin used today.
+// We must enable the consumer to dynamically add their own
+// addons to `examples/.setup/addons.js`.
 //
 try {
   //
@@ -18,7 +13,9 @@ try {
   // from this configuration so that `examples/.setup/decorators.js`
   // is not necessary for the simple case.
   //
-  require(`${process.env.STORYBOOK_CWD}/examples/.setup/addons.js`);
+  if (EX_SETUP_ADDONS) {
+    require(EX_SETUP_ADDONS);
+  }
 } catch (ex) {
   console.dir(ex);
 }

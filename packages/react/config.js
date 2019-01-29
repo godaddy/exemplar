@@ -1,7 +1,7 @@
 import { configure } from '@storybook/react';
 
 function loadStories() {
-  require('./add-all-examples');
+  require('./load-examples');
 }
 
 if (EX_SETUP_CONFIG) {
