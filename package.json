@@ -1,7 +1,7 @@
 {
   "name": "exemplar",
   "version": "0.0.1",
-  "description": "Storybook rocket fuel to launch structured examples of React & React Native components",
+  "description": "Documentation Rocket Fuel for your components.",
   "private": true,
   "scripts": {
     "publish:react": "mono --publish react",
