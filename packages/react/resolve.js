@@ -12,6 +12,7 @@ function resolveModule(request, required) {
     return `'${require.resolve(request)}'`;
   } catch (err) {
     if (required || err.code !== 'MODULE_NOT_FOUND') {
+      // eslint-disable-next-line no-console
       console.error(`Error resolving request ${request}`);
       throw err;
     }
@@ -23,7 +24,7 @@ function resolveModule(request, required) {
 /**
  * Resolves the given request for a module.
  *
- * @param {String[]} request - The requested module path.
+ * @param {String[]} requests - The requested module paths.
  * @param {Boolean} required - Whether or not the module is required.
  * @returns {String} - The requested string, or `''` if the module was not required and not found.
  */
@@ -45,10 +46,12 @@ function resolveModules(requests, required) {
  */
 function resolveDir(request, required) {
   try {
-    const stats = fs.statSync(request);
+    // eslint-disable-next-line no-sync
+    fs.statSync(request);
     return `'${request}'`;
   } catch (err) {
     if (required || err.code !== 'ENOENT') {
+      // eslint-disable-next-line no-console
       console.error(`Error resolving directory ${request}`);
       throw err;
     }

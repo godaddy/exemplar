@@ -9,8 +9,8 @@ const {
 /**
  * Get the contents of a JSON file
  *
- * @param  {String} required - Full path to JSON file
- * @return {Object} - The requested object, {} if the file was not found.
+ * @param  {String} setupDir - Where to find `aliases.json` and relative alias targets.
+ * @returns {Object} - The requested object, {} if the file was not found.
  */
 function generateAliases(setupDir) {
   let data;
@@ -18,8 +18,9 @@ function generateAliases(setupDir) {
 
   try {
     data = require(required);
-  } catch(err) {
+  } catch (err) {
     if (err.code !== 'MODULE_NOT_FOUND') {
+      // eslint-disable-next-line no-console
       console.error(`Error resolving JSON file: ${required}`);
       throw err;
     }

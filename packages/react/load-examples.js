@@ -5,8 +5,8 @@ import { storiesOf } from '@storybook/react';
  * Generate module from the given context. Taken directly from the wiki here
  * https://github.com/webpack/docs/wiki/context#context-module-api
  *
- * @param  {¯\_(ツ)_/¯} context some wizardry that require.context returns
- * @return {Example[]} A list of React.Components that can be rendered
+ * @param  {webpack.require} context some wizardry that require.context returns
+ * @returns {Example[]} A list of React.Components that can be rendered
  */
 function requireAll(context) {
   return context.keys().map(key => {
@@ -18,9 +18,12 @@ function requireAll(context) {
   });
 }
 
+// eslint-disable-next-line no-undef
 const pkg = EX_PKG_JSON;
 const contexts = [
+  // eslint-disable-next-line no-undef
   EX_CROSS_PLATFORM && require.context(EX_CROSS_PLATFORM, true, /^\.\/.*\.js$/),
+  // eslint-disable-next-line no-undef
   EX_WEB && require.context(EX_WEB, true, /^\.\/.*\.js$/)
 ].filter(Boolean);
 
@@ -30,14 +33,16 @@ const modules = contexts.reduce((all, context) => {
 }, []);
 
 try {
+  // eslint-disable-next-line no-undef
   if (EX_SETUP_SCSS) require(EX_SETUP_SCSS);
 } catch (ex) {
-  /* Ignore errors */
+  // Ignore errors.
+  // eslint-disable-next-line no-console
   console.warn(ex);
 }
 
 modules.reduce((stories, example, i) => {
-  const { source, Component } = example;
+  const { Component } = example;
 
   // Do not attempt to load invalid or undefined example Components
   if (!Component || !Component.name) return stories;
