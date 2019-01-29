@@ -1,11 +1,10 @@
-# `@exemplar/storybook-native`
+# `@exemplar/storybook`
 
 Add storybook and exemplar to your package
 
 ```bash
 npm i --save-dev \
-  @storybook/react @storybook/react-native \
-  @exemplar/storybook @exemplar/storybook-native
+  @storybook/react @exemplar/storybook
 ```
 
 > Want to have `react-native` support too? See: [@exemplar/storybook-native]
@@ -16,7 +15,7 @@ preview web as well):
 ``` js
 {
   "scripts": {
-    "preview": "start-storybook -p 9001 -c @exemplar/storybook" 
+    "preview": "start-storybook -p 9001 -c ./node_modules/@exemplar/storybook"
   }
 }
 ```
