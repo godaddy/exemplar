@@ -1,52 +1,72 @@
 # exemplar
-Storybook rocket fuel to launch structured examples of React & React Native components
 
+Documentation Rocket Fuel for your components.
 
-## Basic Usage
+## Motivation
 
-Add storybook and exemplar to your package
+There are a number of very powerful tools for previewing and show casing live examples of components that support multiple frameworks and multiple platforms. 
 
-```bash
-npm i -D @storybook/react @storybook/react-native @exemplar/react @exemplar/react-native
-```
+**Then why make this!?** Great question! There are several reasons:
 
-Add storybook scripts to your `package.json`
+1. **Support "[Examples Best Practices]" by DEFAULT:** cut out the cruft from
+  your examples. Be clear, concise, and "Copy Paste Ready".
+2. **Interoperability First** with the proliferation of tools for previewing
+  components there has yet to be a decoupled structure that can be used across 
+  multiple tools. While each tool or platform is working towards a better 
+  developer experience they are not concerned with one another. Although
+  [standards proliferation] will always be an issue, but taking an
+  **Interoperability First** approach we can cross-pollinate across tools 
+  without becoming yet another CLI to learn.
 
-``` js
-{
-  "scripts": {
-    "preview": "start-storybook -p 9001 -c @exemplar/react"
-    "preview:native": "storybook -c @exemplar/react-native" 
-  }
-}
-```
+### Examples Best Practices: explained
 
-Before you can run storybook you will need create some `@exemplar` style stories:
+- **Clear `require` / `import` usage**: prefer `require('your-module')` vs.
+  a relative path such as `require('../../')`;
+- **"Copy Paste Ready":** a good example can be dropped into an application
+  with little to no changes necessary.
+- **Hide Example Presentation:** the consumers of your components don't have
+  ton know anything about your example framework (e.g. Storybook, Docz, etc.). 
+- **Supports Design Documentation:** the _why of your UX_ is side-by-side with
+  the _why of your Component API._
 
+## Example structure in a nutshell
 
-## Example Structure 
+Checkout our [`examples` directory](./example) for starter projects.
 
 ``` bash
-stories/
-  index.js        # Main Entrypoint
-  index.native.js # Main Native Entrypoint
+examples/
+# Main Entrypoints
+  index.js        # Web
+  index.native.js # Native
 
 # Stories
   *.js        # Run on Web & Native
   web/*.js    # Run on Web only
-  web/*.md    # Optional markdown description for each example
   native/*.js # Run on  Native only
 
+# Setup
+  .setup/
+    aliases.json # Webpack aliases
+    shared.scss  # Global styles
+
+# Storybook-only
+  .setup/
+    addons.js # Configure Storybook addons
+    config.js # Configure Storybook addons
 ```
 
-Checkout our `examples` directory for starter projects. 
+## Supported Platforms
 
+- [Storybook]
+  - [React]
+  - [React Native]
+- [Docz] **COMING SOON**
 
-## Project management
+## Local Development & Releases
 
-This repo is managed by the `mono-repos` package which comes with CLI and Node.js
-API for managing packages. It's already installed as devDependency, but you
-can also install it locally:
+This repo is managed by the `mono-repos` package which comes with CLI and
+Node.js API for managing packages. It's already installed as devDependency, but
+you can also install it locally:
 
 ```
 npm install --global mono-repos
@@ -54,8 +74,8 @@ npm install --global mono-repos
 
 ### Install
 
-We've provided an installation script that will automatically go through
-all the packages, install the dependencies, and symlink them if needed. This
+We've provided an installation script that will automatically go through all
+the packages, install the dependencies, and symlink them if needed. This
 process is run automatically when you run:
 
 ```
@@ -68,8 +88,8 @@ folder as well, but that will not setup the correct symlinks for you.
 
 ### Testing
 
-You can either run tests separately, or run them all at once (recommended for new
-releases).
+You can either run tests separately, or run them all at once (recommended for
+new releases).
 
 ```
 npm test
@@ -122,3 +142,7 @@ mono --publish react-native
 ```
 
 [mono]: https://github.com/3rd-Eden/mono-repos/mono.md
+[Storybook]: https://storybook.js.org
+[React]: ./packages/react#readme
+[React Native]: ./packages/react-native#readme
+[Docz]: https://docz.site

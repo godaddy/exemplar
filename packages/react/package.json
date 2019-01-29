@@ -1,7 +1,7 @@
 {
-  "name": "@exemplar/react",
+  "name": "@exemplar/storybook",
   "version": "0.0.0",
-  "description": "Storybook rocket fuel to launch structured examples of React",
+  "description": "Documentation Rocket Fuel for your components using Storybook.",
   "main": "index.js",
   "scripts": {
     "lint": "eslint-godaddy-react bin/*.js examples/*.js *.js ./.storybook/*.js --no-ignore",
@@ -29,7 +29,7 @@
   "bugs": {
     "url": "https://github.com/godaddy/exemplar/issues"
   },
-  "homepage": "https://github.com/godaddy/exemplar#readme",
+  "homepage": "https://github.com/godaddy/exemplar/tree/master/packages/react",
   "dependencies": {
     "diagnostics": "^1.1.1",
     "webpack": "^4.28.4"

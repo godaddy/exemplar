@@ -1,13 +1,13 @@
 {
-  "name": "@exemplar/react-native",
+  "name": "@exemplar/storybook-native",
   "version": "0.0.1",
-  "description": "React Native configs for storybook",
+  "description": "Documentation Rocket Fuel for your components using Storybook.",
   "main": "index.js",
   "bin": {
     "exemplar": "./bin/exemplar.js",
     "mockHaul": "./bin/mockHaul.js"
   },
-  "homepage": "https://github.com/godaddy/exemplar",
+  "homepage": "https://github.com/godaddy/exemplar/tree/master/packages/react-native",
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
     "test": "echo \"Error: no test specified\" && exit"
