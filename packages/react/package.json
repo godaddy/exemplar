@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "lint": "eslint-godaddy-react bin/*.js examples/*.js *.js ./.storybook/*.js --no-ignore",
-    "test": "nyc mocha test/*.test.js",
+    "test": "nyc mocha test.js",
     "posttest": "npm run lint",
     "exemplar": "node bin/start-exemplar.js",
     "storybook": "start-storybook -c ./"

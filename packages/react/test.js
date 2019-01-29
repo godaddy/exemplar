@@ -1,6 +1,5 @@
 const path = require('path');
 const rimraf = require('rimraf');
-const fs = require('fs');
 const assume = require('assume');
 const { spawn } = require('child_process');
 
@@ -13,10 +12,8 @@ function assumeBuildStorybook(config) {
       '-o', './.testout'
     ]);
 
-    if (process.env.DEBUG) {
-      storybook.stdout.pipe(process.stdout);
-      storybook.stderr.pipe(process.stderr);
-    }
+    storybook.stdout.pipe(process.stdout);
+    storybook.stderr.pipe(process.stderr);
 
     storybook.once('error', done);
     storybook.on('exit', code => {
