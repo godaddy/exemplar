@@ -1,7 +1,16 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-const isIndex = /index\.js/;
+/**
+ * Simple function to match index.native?.js
+ * @param  {String}  key Target filename to verify
+ * @returns {Boolean} Value indicating if key is 'index.js'
+ * or 'index.native.js'
+ */
+function isIndex(key) {
+  return key.indexOf('index.js') !== -1
+    || key.indexOf('index.native.js') !== -1;
+}
 
 /**
  * Generate module from the given context. Taken directly from the wiki here
@@ -10,9 +19,9 @@ const isIndex = /index\.js/;
  * @param  {webpack.require} context some wizardry that require.context returns
  * @returns {Example[]} A list of React.Components that can be rendered
  */
-function requireAll(context, i) {
+function requireAll(context) {
   return context.keys().map(key => {
-    if (isIndex.test(key)) return;
+    if (isIndex(key)) return;
 
     const mod = context(key);
     return {
