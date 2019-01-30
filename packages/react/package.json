@@ -1,6 +1,6 @@
 {
   "name": "@exemplar/storybook",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Documentation Rocket Fuel for your components using Storybook.",
   "main": "index.js",
   "scripts": {
