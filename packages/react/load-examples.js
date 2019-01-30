@@ -2,6 +2,17 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 
 /**
+ * Simple function to match index.native?.js
+ * @param  {String}  key Target filename to verify
+ * @returns {Boolean} Value indicating if key is 'index.js'
+ * or 'index.native.js'
+ */
+function isIndex(key) {
+  return key.indexOf('index.js') !== -1
+    || key.indexOf('index.native.js') !== -1;
+}
+
+/**
  * Generate module from the given context. Taken directly from the wiki here
  * https://github.com/webpack/docs/wiki/context#context-module-api
  *
@@ -10,21 +21,23 @@ import { storiesOf } from '@storybook/react';
  */
 function requireAll(context) {
   return context.keys().map(key => {
+    if (isIndex(key)) return;
+
     const mod = context(key);
     return {
       source: key,
       Component: mod.default
     };
-  });
+  }).filter(Boolean);
 }
 
 // eslint-disable-next-line no-undef
 const pkg = EX_PKG_JSON;
 const contexts = [
   // eslint-disable-next-line no-undef
-  EX_CROSS_PLATFORM && require.context(EX_CROSS_PLATFORM, true, /^\.\/.*\.js$/),
+  EX_CROSS_PLATFORM && require.context(EX_CROSS_PLATFORM, false, /^\.\/([-\w]+)\.js$/),
   // eslint-disable-next-line no-undef
-  EX_WEB && require.context(EX_WEB, true, /^\.\/.*\.js$/)
+  EX_WEB && require.context(EX_WEB, true, /^\.\/([-\w]+)\.js$/)
 ].filter(Boolean);
 
 const modules = contexts.reduce((all, context) => {
@@ -41,11 +54,11 @@ try {
   console.warn(ex);
 }
 
-modules.reduce((stories, example, i) => {
+modules.reduce((stories, example) => {
   const { Component } = example;
 
   // Do not attempt to load invalid or undefined example Components
   if (!Component || !Component.name) return stories;
 
-  return stories.add(`[${i}] ${Component.name}`, () => React.createElement(Component));
+  return stories.add(`${Component.name}`, () => React.createElement(Component));
 }, storiesOf(pkg.name, module));
