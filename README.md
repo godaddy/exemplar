@@ -2,7 +2,7 @@
 
 Documentation Rocket Fuel for your components.
 
-## Usage on Supported Platforms
+## Supported Platforms
 
 - [Storybook]
   - [React]
@@ -32,7 +32,7 @@ There are a number of very powerful tools for previewing and show casing live ex
 - **"Copy Paste Ready":** a good example can be dropped into an application
   with little to no changes necessary.
 - **Hide Example Presentation:** the consumers of your components don't have
-  ton know anything about your example framework (e.g. Storybook, Docz, etc.).
+  to know anything about your example framework (e.g. Storybook, Docz, etc.).
 - **Supports Design Documentation:** the _why of your UX_ is side-by-side with
   the _why of your Component API._
 
@@ -50,8 +50,8 @@ examples/
   .setup/
     aliases.json # Webpack aliases
     shared.scss  # Global styles
+    config.js # Configure Storybook
     addons.js # Configure Storybook addons
-    config.js # Configure Storybook addons
 ```
 
 ## Local Development & Releases
@@ -129,6 +129,7 @@ npm run publish:react
 mono --publish react
 ```
 
+[standards proliferation]: https://xkcd.com/927/
 [mono]: https://github.com/3rd-Eden/mono-repos/mono.md
 [Storybook]: https://storybook.js.org
 [React]: ./packages/react#readme

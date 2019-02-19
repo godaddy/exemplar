@@ -6,8 +6,7 @@ Add `storybook` and `exemplar` to your package
 npm i --save-dev @exemplar/storybook @storybook/react @storybook/addons
 ```
 
-Add storybook scripts to your `package.json` (assuming you also want to
-preview web as well):
+Add storybook scripts to your `package.json`:
 
 ``` js
 {
@@ -18,6 +17,6 @@ preview web as well):
 ```
 
 Before you can run storybook you will need create some `@exemplar` style
-examples. See: [Example structure in a nutshell]
+examples: see the [example structure in a nutshell]
 
-[Example structure in a nutshell]: ./README.md#example-structure-in-a-nutshell.
+[example structure in a nutshell]: ../../README.md#example-structure-in-a-nutshell.
