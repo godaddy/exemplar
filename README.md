@@ -1,13 +1,11 @@
 # `@exemplar`
 
-Documentation Rocket Fuel for your components.
+:rocket: Documentation [Storybook] rocket fuel for your components.
 
 ## Supported Platforms
 
-- [Storybook]
-  - [React]
-  - [React Native] **COMING SOON**
-- [Docz] **COMING SOON**
+- [React]
+- [React Native] **COMING SOON**
 
 ## Motivation
 

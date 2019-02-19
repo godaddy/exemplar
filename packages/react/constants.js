@@ -24,7 +24,7 @@ function generateAliases(setupDir) {
       console.error(`Error resolving JSON file: ${required}`);
       throw err;
     }
-    // the simply did not have an aliases file
+    // there was not an aliases.json file present
     data = {};
   }
 
