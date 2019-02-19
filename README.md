@@ -38,13 +38,10 @@ There are a number of very powerful tools for previewing and show casing live ex
 
 ## Example structure in a nutshell
 
-Checkout our [`examples` directory](./example) for starter projects.
+Checkout our [`examples` directory](./examples) for starter projects.
 
 ``` bash
 examples/
-# Main Entrypoints
-  index.js        # Web
-
 # Stories
   *.js        # Runs on all platforms
   web/*.js    # Runs on Web only
