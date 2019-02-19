@@ -1,21 +1,21 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Button = ({ chidren, design, onPress }) => (
-  <button className={ design } onPress={ onPress }>
+const Button = ({ children, design, onClick }) => (
+  <button className={ design } onClick={ onClick }>
     { children }
   </button>
 );
 
 Button.propTypes = {
   design: PropTypes.oneOf(['red', 'green', 'blue']),
-  onPress: PropTypes.func,
+  onClick: PropTypes.func,
   children: PropTypes.node
 };
 
-Button.defaultProps - {
+Button.defaultProps = {
   design: 'blue',
-  onPress: () => {}
+  onClick: () => {}
 };
 
 const Text = ({ children, design }) => (
@@ -29,7 +29,7 @@ Text.propTypes = {
   children: PropTypes.node
 };
 
-Text.defaultProps - {
+Text.defaultProps = {
   design: 'blue'
 };
 

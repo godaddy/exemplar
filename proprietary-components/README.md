@@ -1,7 +1,7 @@
 This directory serves as an example for your components. While in practice your
 `React` components may be significantly more advanced, they do not need to be
-exposed in any different manner. If published these components would be able
-to be consumed as follows:
+exposed in any different manner. If published, these components would be
+consumed as follows:
 
 ```js
 import React from 'react';
