@@ -129,9 +129,10 @@ npm run publish:react
 mono --publish react
 ```
 
+[#Examples Best Practices]: #examples-best-practices-explained
 [standards proliferation]: https://xkcd.com/927/
 [mono]: https://github.com/3rd-Eden/mono-repos/mono.md
 [Storybook]: https://storybook.js.org
-[React]: ./packages/react#readme
+[React]: ./packages/react
 [React Native]: https://facebook.github.io/react-native/
 [Docz]: https://docz.site

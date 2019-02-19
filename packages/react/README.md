@@ -19,4 +19,4 @@ Add storybook scripts to your `package.json`:
 Before you can run storybook you will need create some `@exemplar` style
 examples: see the [example structure in a nutshell]
 
-[example structure in a nutshell]: ../../README.md#example-structure-in-a-nutshell.
+[example structure in a nutshell]: ../../README.md#example-structure-in-a-nutshell
