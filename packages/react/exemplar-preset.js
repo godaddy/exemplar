@@ -7,7 +7,7 @@ const { definitions } = require('./constants');
  * @param  {Object} options    Settings provided by Storybook
  * @returns {Object} Modified webpack configuration.
  */
-exports.managerWebpack =  async function managerWebpack(baseConfig) {
+exports.managerWebpack = async function managerWebpack(baseConfig) {
   // Define the paths that exemplar will attempt to load
   baseConfig.plugins.push(new DefinePlugin(definitions));
 

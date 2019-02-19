@@ -129,7 +129,7 @@ npm run publish:react
 mono --publish react
 ```
 
-[#Examples Best Practices]: #examples-best-practices-explained
+[Examples Best Practices]: #examples-best-practices-explained
 [standards proliferation]: https://xkcd.com/927/
 [mono]: https://github.com/3rd-Eden/mono-repos/mono.md
 [Storybook]: https://storybook.js.org

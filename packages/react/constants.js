@@ -24,10 +24,12 @@ function generateAliases(setupDir) {
       console.error(`Error resolving JSON file: ${required}`);
       throw err;
     }
+    // the simply did not have an aliases file
+    data = {};
   }
 
   return Object
-    .entries(data || {})
+    .entries(data)
     .reduce((acc, [alias, file]) => {
       //
       // Because we're specifying exact files we must pass a $ to webpack.resolve
