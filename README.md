@@ -36,23 +36,9 @@ There are a number of very powerful tools for previewing and show casing live ex
 - **Supports Design Documentation:** the _why of your UX_ is side-by-side with
   the _why of your Component API._
 
-## Example structure in a nutshell
+## Example structure
 
 Checkout our [`examples` directory](./examples) for starter projects.
-
-``` bash
-examples/
-# Stories
-  *.js        # Runs on all platforms
-  web/*.js    # Runs on Web only
-
-# Setup
-  .setup/
-    aliases.json # Webpack aliases
-    shared.scss  # Global styles
-    config.js # Configure Storybook
-    addons.js # Configure Storybook addons
-```
 
 ## Local Development & Releases
 

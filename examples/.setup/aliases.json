@@ -1,3 +1,3 @@
 {
-  "super-secret-components": "../external-packages/proprietary-component-library.js"
+  "super-secret-components": "../../proprietary-components/proprietary-component-library.js"
 }
