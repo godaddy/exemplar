@@ -78,7 +78,8 @@ mono --install
 In the root of the repository. You can always run `npm install` in the package
 folder as well, but that will not setup the correct symlinks for you.
 
-### Testing
+### Testing [![Build Status](https://travis-ci.com/godaddy/exemplar.svg?branch=master)](https://travis-ci.com/godaddy/exemplar)
+
 
 You can either run tests separately, or run them all at once (recommended for
 new releases).
