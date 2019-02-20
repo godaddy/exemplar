@@ -23,7 +23,9 @@
   ],
   "author": "GoDaddy.com Operating Company, LLC",
   "contributors": [
-    "Jason Cline <jcline@godaddy.com>"
+    "Jason Cline <jcline@godaddy.com>",
+    "Charlie Robbins <crobbins@godaddy.com>",
+    "Sivan Mehta <smehta@godaddy.com>"
   ],
   "license": "MIT",
   "devDependencies": {

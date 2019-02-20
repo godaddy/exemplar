@@ -1,21 +1,26 @@
-# exemplar
+# `@exemplar`
 
-Documentation Rocket Fuel for your components.
+:rocket: Documentation [Storybook] rocket fuel for your components.
+
+## Supported Platforms
+
+- [React]
+- [React Native] **COMING SOON**
 
 ## Motivation
 
-There are a number of very powerful tools for previewing and show casing live examples of components that support multiple frameworks and multiple platforms. 
+There are a number of very powerful tools for previewing and show casing live examples of components that support multiple frameworks and multiple platforms.
 
 **Then why make this!?** Great question! There are several reasons:
 
 1. **Support "[Examples Best Practices]" by DEFAULT:** cut out the cruft from
   your examples. Be clear, concise, and "Copy Paste Ready".
 2. **Interoperability First** with the proliferation of tools for previewing
-  components there has yet to be a decoupled structure that can be used across 
-  multiple tools. While each tool or platform is working towards a better 
+  components there has yet to be a decoupled structure that can be used across
+  multiple tools. While each tool or platform is working towards a better
   developer experience they are not concerned with one another. Although
   [standards proliferation] will always be an issue, but taking an
-  **Interoperability First** approach we can cross-pollinate across tools 
+  **Interoperability First** approach we can cross-pollinate across tools
   without becoming yet another CLI to learn.
 
 ### Examples Best Practices: explained
@@ -25,42 +30,13 @@ There are a number of very powerful tools for previewing and show casing live ex
 - **"Copy Paste Ready":** a good example can be dropped into an application
   with little to no changes necessary.
 - **Hide Example Presentation:** the consumers of your components don't have
-  ton know anything about your example framework (e.g. Storybook, Docz, etc.). 
+  to know anything about your example framework (e.g. Storybook, Docz, etc.).
 - **Supports Design Documentation:** the _why of your UX_ is side-by-side with
   the _why of your Component API._
 
-## Example structure in a nutshell
+## Example structure
 
-Checkout our [`examples` directory](./example) for starter projects.
-
-``` bash
-examples/
-# Main Entrypoints
-  index.js        # Web
-  index.native.js # Native
-
-# Stories
-  *.js        # Run on Web & Native
-  web/*.js    # Run on Web only
-  native/*.js # Run on  Native only
-
-# Setup
-  .setup/
-    aliases.json # Webpack aliases
-    shared.scss  # Global styles
-
-# Storybook-only
-  .setup/
-    addons.js # Configure Storybook addons
-    config.js # Configure Storybook addons
-```
-
-## Supported Platforms
-
-- [Storybook]
-  - [React]
-  - [React Native]
-- [Docz] **COMING SOON**
+Checkout our [`examples` directory](./examples) for starter projects.
 
 ## Local Development & Releases
 
@@ -86,7 +62,8 @@ mono --install
 In the root of the repository. You can always run `npm install` in the package
 folder as well, but that will not setup the correct symlinks for you.
 
-### Testing
+### Testing [![Build Status](https://travis-ci.com/godaddy/exemplar.svg?branch=master)](https://travis-ci.com/godaddy/exemplar)
+
 
 You can either run tests separately, or run them all at once (recommended for
 new releases).
@@ -101,11 +78,8 @@ For testing individual packages
 
 ```
 npm run test:react
-npm run test:react-native
-
 
 mono --test react
-mono --test react-native
 ```
 
 If this isn't your thing, you can also still go in to the package's directory
@@ -135,14 +109,14 @@ When you want to release an individual package:
 
 ```
 npm run publish:react
-npm run publish:react-native
 
 mono --publish react
-mono --publish react-native
 ```
 
+[Examples Best Practices]: #examples-best-practices-explained
+[standards proliferation]: https://xkcd.com/927/
 [mono]: https://github.com/3rd-Eden/mono-repos/mono.md
 [Storybook]: https://storybook.js.org
-[React]: ./packages/react#readme
-[React Native]: ./packages/react-native#readme
+[React]: ./packages/react
+[React Native]: https://facebook.github.io/react-native/
 [Docz]: https://docz.site

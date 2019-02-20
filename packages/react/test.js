@@ -24,7 +24,7 @@ function assumeBuildStorybook(config) {
 }
 
 describe('@exemplar/storybook', function () {
-  this.timeout(15 * 1000);
+  this.timeout(60 * 1000);
 
   beforeEach(done => {
     rimraf(outDir, done.bind(null, null));
