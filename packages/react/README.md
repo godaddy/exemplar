@@ -3,7 +3,7 @@
 Add `storybook` and `exemplar` to your package
 
 ```bash
-npm i --save-dev @exemplar/storybook @storybook/react @storybook/addons
+npm i --save-dev @exemplar/storybook @storybook/react@4 @storybook/addons
 ```
 
 Add storybook scripts to your `package.json`:
