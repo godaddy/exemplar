@@ -1,21 +1,34 @@
 import React from 'react';
-import { Text } from 'react-native';
+import { Button, View } from 'react-native';
 
 import { storiesOf } from '@storybook/react-native';
 import { action } from '@storybook/addon-actions';
 import { linkTo } from '@storybook/addon-links';
 
-storiesOf('Welcome', module).add('to Storybook', () => <Welcome showApp={linkTo('Button')} />);
+const Center = ({ children }) => (
+  <View style={{
+    flex: 1,
+    flexDirection: 'column',
+    justifyContent: 'center'
+  }}>
+    { children }
+  </View>
+)
 
 storiesOf('Button', module)
-  .addDecorator(getStory => <CenterView>{getStory()}</CenterView>)
   .add('with text', () => (
-    <Button onPress={action('clicked-text')}>
-      <Text>Hello Button</Text>
-    </Button>
+    <Center>
+      <Button
+        title='hi there'
+        onPress={action('clicked-text')}>
+      </Button>
+     </Center>
   ))
   .add('with some emoji', () => (
-    <Button onPress={action('clicked-emoji')}>
-      <Text>😀 😎 👍 💯</Text>
-    </Button>
+    <Center>
+      <Button
+        title='😀 😎 👍 💯'
+        onPress={action('clicked-emoji')}>
+      </Button>
+    </Center>
   ));
