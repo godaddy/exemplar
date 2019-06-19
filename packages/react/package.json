@@ -35,14 +35,14 @@
     "webpack": "^4.28.4"
   },
   "peerDependencies": {
-    "@storybook/addons": "^4.1.11",
-    "@storybook/react": "^4.1.11"
+    "@storybook/addons": "^5.1.0",
+    "@storybook/react": "^5.1.0"
   },
   "devDependencies": {
     "@babel/core": "^7.2.2",
     "@babel/plugin-syntax-dynamic-import": "^7.2.0",
-    "@storybook/addons": "^4.1.11",
-    "@storybook/react": "^4.1.11",
+    "@storybook/addons": "^5.1.0",
+    "@storybook/react": "^5.1.0",
     "assume": "^2.1.0",
     "babel-eslint": "^10.0.1",
     "babel-loader": "^8.0.5",
