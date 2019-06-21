@@ -7,7 +7,7 @@ const {
   definitions
 } = require('./constants');
 
-module.exports = function (baseConfig, env, webpackConfig) {
+module.exports = function config({ config: webpackConfig }) {
   //
   // Load SCSS when applicable
   // TODO (@indexzero): Make this configurable
