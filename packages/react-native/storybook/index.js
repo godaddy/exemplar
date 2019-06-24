@@ -1,4 +1,5 @@
 import { AppRegistry } from 'react-native';
+import { name as appName } from '../app.json';
 import { getStorybookUI, configure } from '@storybook/react-native';
 
 import './rn-addons';
@@ -13,6 +14,6 @@ configure(() => {
 const StorybookUIRoot = getStorybookUI({});
 
 // If you are using React Native vanilla and after installation you don't see your app name here, write it manually.
-AppRegistry.registerComponent('Exemplar', () => StorybookUIRoot);
+AppRegistry.registerComponent(appName, () => StorybookUIRoot);
 
 export default StorybookUIRoot;

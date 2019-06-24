@@ -16,7 +16,16 @@ export default {
           path.resolve('node_modules/react-devtools-core/'),
           path.resolve('node_modules/react-hot-loader/')
         ],
-        loaders: ['babel-loader']
+        loaders: [
+          {
+            loader: 'babel-loader',
+            options: {
+              babelrc: false,
+              presets: ['module:metro-react-native-babel-preset'],
+              cacheDirectory: true
+            }
+          }
+        ]
       },
       ...config.module.rules
     ];
