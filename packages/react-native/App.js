@@ -1,4 +1,3 @@
-// export default from './storybook';
+import storybook from './storybook';
 
-import WTF from './storybook';
-export default WTF;
+export default storybook;

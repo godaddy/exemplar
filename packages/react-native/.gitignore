@@ -58,3 +58,6 @@ buck-out/
 # Haul
 #
 haul-debug.log
+
+# Ignore generated `storybook/stories/index.js`
+storybook/stories/index.js

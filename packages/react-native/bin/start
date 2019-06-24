@@ -1,0 +1,44 @@
+#!/usr/bin/env node
+
+const generateEntry = require('../generate-entry');
+const { spawn } = require('child_process');
+const argv = require('argh').argv;
+const path = require('path');
+const fs = require('fs');
+
+// read from argv for arguments
+const entryContent = generateEntry(argv.entry);
+const cwd = path.join(__dirname, '..');
+
+//
+// Write the entry file to storybook/index.js.
+// Content is read from `node_modules` and can be considered empheral.
+//
+console.log(`Adding native stories from ${ argv.entry || './examples/index.native.js'}`); // eslint-disable-line no-console
+fs.writeFileSync(path.join(cwd, 'storybook', 'stories', 'index.js'), entryContent); // eslint-disable-line
+
+//
+// Spawn haul.
+//
+const haul = path.join(cwd, 'node_modules', '.bin', 'haul');
+const haulProcess = spawn(haul, ['start', `--platform ${ argv.platform || 'ios'}`], {
+  stdio: 'inherit',
+  cwd
+});
+
+//
+// Run the react-native storybook app. This will not spawn metro-bundler since Haul should already be running.
+//
+const buildProcess = spawn('node', ['node_modules/react-native/local-cli/cli.js', `run-${ argv.platform || 'ios'}`], {
+  cwd
+});
+
+buildProcess.once('close', function closed() {
+  console.log('React Native completed building storybook.'); // eslint-disable-line
+});
+
+process.once('SIGINT', function () {
+  buildProcess.kill();
+  haulProcess.kill();
+  process.exit(); // eslint-disable-line
+});

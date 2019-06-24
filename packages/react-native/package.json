@@ -1,15 +1,17 @@
 {
-  "name": "reactnative",
+  "name": "@exemplar/native-storybook",
   "version": "0.0.1",
   "private": true,
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
-    "ios": "react-native run-ios",
-    "test": "jest",
-    "preios": "node generate-index.js",
-    "haul": "haul start -- --platform ios"
+    "test": "jest"
+  },
+  "bin": {
+    "exemplar-native": "bin/start"
   },
   "dependencies": {
+    "argh": "^1.0.0",
+    "haul": "^1.0.0-rc.15",
     "react": "16.8.3",
     "react-native": "0.59.9"
   },
