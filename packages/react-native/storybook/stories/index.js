@@ -39,5 +39,5 @@ import Component0 from '../../examples/native/emojis';
 import Component1 from '../../examples/native/text';
 
 storiesOf('Exemplar', module)
-.add('examples/native/emojis.js', () => <Component0 />)
-.add('examples/native/text.js', () => <Component1 />);
+  .add('examples/native/emojis.js', () => <Component0 />)
+  .add('examples/native/text.js', () => <Component1 />);
