@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-const generateEntry = require('../generate-entry');
+const generateEntry = require('./generate');
 const { spawn } = require('child_process');
 const argv = require('argh').argv;
 const path = require('path');
@@ -18,16 +18,15 @@ console.log(`Adding native stories from ${ argv.entry || './examples/index.nativ
 // fs.writeFileSync(path.join(cwd, 'storybook', 'stories', 'index.js'), entryContent); // eslint-disable-line
 
 //
-// Spawn haul.
+// Spawn metro.
 //
-const haul = path.join(cwd, 'node_modules', '.bin', 'haul');
-const haulProcess = spawn(haul, ['start', `--platform ${ argv.platform || 'ios'}`], {
+const metroProcess = spawn('node', ['node_modules/react-native/local-cli/cli.js', 'start'], {
   stdio: 'inherit',
   cwd
 });
 
 //
-// Run the react-native storybook app. This will not spawn metro-bundler since Haul should already be running.
+// Run the react-native storybook app. This will not spawn metro-bundler as it should already be running.
 //
 const buildProcess = spawn('node', ['node_modules/react-native/local-cli/cli.js', `run-${ argv.platform || 'ios'}`], {
   cwd
@@ -39,6 +38,6 @@ buildProcess.once('close', function closed() {
 
 process.once('SIGINT', function () {
   buildProcess.kill();
-  haulProcess.kill();
+  metroProcess.kill();
   process.exit(); // eslint-disable-line
 });

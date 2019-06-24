@@ -11,9 +11,14 @@
   },
   "dependencies": {
     "argh": "^1.0.0",
-    "haul": "^1.0.0-rc.15",
-    "react": "16.8.3",
-    "react-native": "0.59.9"
+    "babel-plugin-module-resolver": "^3.2.0",
+    "escape-string-regexp": "^2.0.0",
+    "react": "^16.8.3",
+    "react-native": "^0.59.9"
+  },
+  "peerDependencies": {
+    "react": "^16.8.3",
+    "react-native": "^0.59.9"
   },
   "devDependencies": {
     "@babel/core": "^7.4.5",
