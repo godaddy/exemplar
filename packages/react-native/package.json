@@ -1,17 +1,15 @@
 {
   "name": "@exemplar/native-storybook",
-  "version": "0.0.1",
-  "private": true,
+  "version": "1.0.0",
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
-    "test": "jest"
+    "test": "nyc mocha test.js"
   },
   "bin": {
     "exemplar-native": "bin/start"
   },
   "dependencies": {
     "argh": "^1.0.0",
-    "babel-plugin-module-resolver": "^3.2.0",
     "escape-string-regexp": "^2.0.0",
     "react": "^16.8.3",
     "react-native": "^0.59.9"
@@ -27,15 +25,12 @@
     "@storybook/addon-links": "^5.1.9",
     "@storybook/addons": "^5.1.9",
     "@storybook/react-native": "^5.1.9",
-    "babel-jest": "^24.8.0",
+    "assume": "^2.2.0",
     "babel-loader": "^8.0.6",
-    "jest": "^24.8.0",
     "metro-react-native-babel-preset": "^0.54.1",
-    "react-dom": "16.8.3",
+    "mocha": "^6.1.4",
+    "nyc": "^14.1.1",
     "prop-types": "^15.7.2",
-    "react-test-renderer": "16.8.3"
-  },
-  "jest": {
-    "preset": "react-native"
+    "react-dom": "16.8.3"
   }
 }
