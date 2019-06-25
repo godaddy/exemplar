@@ -1,4 +1,3 @@
-const path = require('path');
 const assume = require('assume');
 const generate = require('./bin/generate');
 
