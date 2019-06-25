@@ -28,7 +28,7 @@ module.exports = {
       'react': path.resolve(root, 'node_modules', 'react')
     }
   }
-};`
+};`;
 }
 
 /**

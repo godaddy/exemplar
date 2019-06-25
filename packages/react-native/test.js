@@ -13,17 +13,17 @@ describe('@exemplar/native-storybook', function () {
   });
 
   it('generates metro config', function () {
-    let { metro } = generate('../../examples/native');
-    metro = JSON.parse(metro);
+    const { metro } = generate('../../examples/native');
 
-    assume(metro).to.have.property('watchFolders');
-    assume(metro.watchFolders[0]).contains('exemplar/packages/react-native');
-    assume(metro).to.have.property('resolver');
-    assume(metro.resolver).to.have.property('extraNodeModules');
-    assume(Object.keys(metro.resolver.extraNodeModules)).to.deep.equal([
+    [
+      'watchFolders',
+      'exemplar/packages/react-native',
+      'resolver',
+      'blacklistRE',
+      'extraNodeModules',
       '@babel/runtime',
       'react-native',
       'react'
-    ]);
+    ].forEach(prop => assume(metro).contains(prop));
   });
 });
