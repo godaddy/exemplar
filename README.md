@@ -5,7 +5,7 @@
 ## Supported Platforms
 
 - [React]
-- [React Native] **COMING SOON**
+- [React Native]
 
 ## Motivation
 
