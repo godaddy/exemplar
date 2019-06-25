@@ -25,7 +25,7 @@ Add ios and android run scripts to your `package.json`:
 
 The `exemplar-native` CLI supports the following flags.
 - `--platform`: define the platform to use, defaults to `ios`.
-- `--entry`: define a custom path for the storybook examples, defaults to `[cwd]/examples/index.native.js`.
+- `--entry`: define a custom path for the storybook examples, defaults to `[cwd]/examples/native`.
 
 ### Setting up stories
 

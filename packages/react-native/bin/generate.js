@@ -1,14 +1,14 @@
 const path = require('path');
+const fs = require('fs');
 
 /**
  * Metro bundler configuration
  *
- *  @returns {String} Metro JSON configuration
- *  @private
+ * @param {String} root Base path of @exemplar/react-storybook
+ * @returns {String} Metro JSON configuration
+ * @private
  */
-function metroConfig() {
-  const root = path.resolve(__dirname, '..');
-
+function metroConfig(root) {
   return JSON.stringify({ //eslint-disable-line
     watchFolders: [
       process.cwd()
@@ -26,13 +26,23 @@ function metroConfig() {
 /**
  *  Entry file for storybook stories.
  *
- *  @param {String} entry path to entry file
- *  @returns {String} file content
- *  @private
+ * @param {String} root Base path of @exemplar/react-storybook
+ * @param {String} entry path to entry file
+ * @returns {String} file content
+ * @private
  */
-function entryFile(entry) {
-  const pjson = require(path.resolve(process.cwd(), 'package.json'));
+function entryFile(root, entry) {
+  const pjson = require(path.join(process.cwd(), 'package.json'));
   const examples = path.join(pjson.name, entry);
+  const files = fs.readdirSync(path.join(process.cwd(), entry)).map(file => path.join(examples, file));
+
+  const imports = files
+    .map((file, i) => `import Component${i} from '${file}';`)
+    .join('\n');
+
+  const additions = files
+    .map((file, i) => `story.add('${file}', () => <Component${i} />)`)
+    .join('\n');
 
   return `
 /**
@@ -41,11 +51,10 @@ function entryFile(entry) {
 
 import React from 'react';
 import { storiesOf } from '@storybook/react-native';
-import examples from '${examples}';
+${imports}
 
 const story = storiesOf('Exemplar', module);
-
-examples.forEach(example => story.add(example.title, () => <example.Component />));
+${additions}
 `;
 }
 
@@ -60,13 +69,15 @@ examples.forEach(example => story.add(example.title, () => <example.Component />
 /**
  * Generate config and content for storybook.
  *
- * @param {String} entry path to stories or React examples, defaults to `[module.name]/examples/index.native.js`
+ * @param {String} entry path to stories or React examples, defaults to `[module.name]/examples/native`
  * @returns {Exemplar} Generated content and configuration
  * @public
  */
-module.exports = function generate(entry = path.join('examples', 'index.native.js')) {
+module.exports = function generate(entry = path.join('examples', 'native')) {
+  const root = path.resolve(__dirname, '..');
+
   return {
-    entry: entryFile(entry),
-    metro: metroConfig()
+    entry: entryFile(root, entry),
+    metro: metroConfig(root)
   };
 };

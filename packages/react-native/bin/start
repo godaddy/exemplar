@@ -14,7 +14,7 @@ const root = path.resolve(__dirname, '..');
 // Write the entry file to storybook/index.js.
 // Content is read from `node_modules` and can be considered empheral.
 //
-console.log(`Adding native stories from ${ argv.entry || 'examples/index.native.js'}`); // eslint-disable-line 
+console.log(`Adding native stories from ${ argv.entry || 'examples/native' }`); // eslint-disable-line 
 fs.writeFileSync(path.join(root, 'storybook', 'stories', 'index.js'), entry); // eslint-disable-line
 
 //
