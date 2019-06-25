@@ -18,9 +18,9 @@ console.log(`Adding native stories from ${ argv.entry || 'examples/native' }`); 
 fs.writeFileSync(path.join(root, 'storybook', 'stories', 'index.js'), entry); // eslint-disable-line
 
 //
-//  Update content of `metro.config.json` to attend
+//  Update content of `metro.config.js` to prepare Metro Bundler.
 //
-fs.writeFileSync(path.join(root, 'metro.config.json'), metro); // eslint-disable-line
+fs.writeFileSync(path.join(root, 'metro.config.js'), metro); // eslint-disable-line
 
 //
 // Spawn metro.

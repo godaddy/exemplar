@@ -9,18 +9,26 @@ const fs = require('fs');
  * @private
  */
 function metroConfig(root) {
-  return JSON.stringify({
-    watchFolders: [
-      process.cwd()
-    ],
-    resolver: {
-      extraNodeModules: {
-        '@babel/runtime': path.resolve(root, 'node_modules', '@babel', 'runtime'),
-        'react-native': path.resolve(root, 'node_modules', 'react-native'),
-        'react': path.resolve(root, 'node_modules', 'react')
-      }
+  return `
+const blacklist = require('metro-config/src/defaults/blacklist');
+const path = require('path');
+
+const cwd = '${ process.cwd() }';
+const root = '${ root }';
+
+module.exports = {
+  watchFolders: [cwd],
+  resolver: {
+    blacklistRE: blacklist([
+      new RegExp(\`^\${ path.join(cwd, 'node_modules', 'react-native') }/.*$\`)
+    ]),
+    extraNodeModules: {
+      '@babel/runtime': path.resolve(root, 'node_modules', '@babel', 'runtime'),
+      'react-native': path.resolve(root, 'node_modules', 'react-native'),
+      'react': path.resolve(root, 'node_modules', 'react')
     }
-  }, null, 2);
+  }
+};`
 }
 
 /**
