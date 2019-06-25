@@ -9,7 +9,7 @@ const fs = require('fs');
  * @private
  */
 function metroConfig(root) {
-  return JSON.stringify({ //eslint-disable-line
+  return JSON.stringify({
     watchFolders: [
       process.cwd()
     ],
@@ -34,9 +34,10 @@ function metroConfig(root) {
 function entryFile(root, entry) {
   const pjson = require(path.join(process.cwd(), 'package.json'));
   const examples = path.join(pjson.name, entry);
-  const files = fs.readdirSync(path.join(process.cwd(), entry)).map(file => path.join(examples, file));
+  const files = fs.readdirSync(path.join(process.cwd(), entry)); // eslint-disable-line
 
   const imports = files
+    .map(file => path.join(examples, file))
     .map((file, i) => `import Component${i} from '${file}';`)
     .join('\n');
 
