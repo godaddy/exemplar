@@ -12,7 +12,6 @@
   },
   "dependencies": {
     "argh": "^1.0.0",
-    "escape-string-regexp": "^2.0.0",
     "react": "^16.8.3",
     "react-native": "^0.59.9"
   },
