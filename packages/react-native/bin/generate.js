@@ -2,6 +2,18 @@ const path = require('path');
 const fs = require('fs');
 
 /**
+ * Get module name from `package.json`.
+ *
+ * @returns {String} name
+ * @private
+ */
+function getModuleName() {
+  const pjson = require(path.join(process.cwd(), 'package.json'));
+
+  return pjson.name;
+}
+
+/**
  * Metro bundler configuration
  *
  * @param {String} root Base path of @exemplar/react-storybook
@@ -9,6 +21,8 @@ const fs = require('fs');
  * @private
  */
 function metroConfig(root) {
+  const name = getModuleName();
+
   return `
 const blacklist = require('metro-config/src/defaults/blacklist');
 const path = require('path');
@@ -23,6 +37,7 @@ module.exports = {
       new RegExp(\`^\${ path.join(cwd, 'node_modules', 'react-native') }/.*$\`)
     ]),
     extraNodeModules: {
+      '${ name }': cwd,
       '@babel/runtime': path.resolve(root, 'node_modules', '@babel', 'runtime'),
       'react-native': path.resolve(root, 'node_modules', 'react-native'),
       'react': path.resolve(root, 'node_modules', 'react')
@@ -40,8 +55,8 @@ module.exports = {
  * @private
  */
 function entryFile(root, entry) {
-  const pjson = require(path.join(process.cwd(), 'package.json'));
-  const examples = path.join(pjson.name, entry);
+  const name = getModuleName();
+  const examples = path.join(name, entry);
   const files = fs.readdirSync(path.join(process.cwd(), entry)); // eslint-disable-line
 
   const imports = files
