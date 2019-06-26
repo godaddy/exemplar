@@ -62,3 +62,7 @@ haul-debug.log
 # Ignore generated `storybook/stories/index.js`
 storybook/stories/index.js
 metro.config.js
+
+# The files are added using the `react-native eject` command for development
+ios
+android

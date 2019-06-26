@@ -4,6 +4,7 @@
   "scripts": {
     "lint": "eslint-godaddy-react bin/*.js *.js ./storybook/*.js --no-ignore",
     "posttest": "npm run lint",
+    "postinstall": "react-native eject",
     "test": "nyc mocha test.js"
   },
   "bin": {
