@@ -7,8 +7,9 @@ available in `@exemplar`. The base structure of this directory as follows:
 ``` bash
 examples/
   # Stories
-  *.js        # Runs on all platforms
-  web/*.js    # Runs on Web only
+  *.js          # Runs on all platforms
+  web/*.js      # Runs on Web only
+  native/*.js   # Runs on mobile platforms only
 
   # Setup
   .setup/
