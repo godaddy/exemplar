@@ -1,6 +1,6 @@
 {
   "name": "@exemplar/native-storybook",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "scripts": {
     "lint": "eslint-godaddy-react bin/*.js *.js ./storybook/*.js --no-ignore",
     "posttest": "npm run lint",
