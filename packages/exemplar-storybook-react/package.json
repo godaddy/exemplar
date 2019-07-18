@@ -1,5 +1,5 @@
 {
-  "name": "@exemplar/storybook",
+  "name": "@exemplar/storybook-react",
   "version": "2.0.0",
   "description": "Documentation Rocket Fuel for your components using Storybook.",
   "main": "index.js",
@@ -29,7 +29,7 @@
   "bugs": {
     "url": "https://github.com/godaddy/exemplar/issues"
   },
-  "homepage": "https://github.com/godaddy/exemplar/tree/master/packages/react",
+  "homepage": "https://github.com/godaddy/exemplar/tree/master/packages/exemplar-storybook-react",
   "dependencies": {
     "diagnostics": "^1.1.1",
     "webpack": "^4.28.4"
@@ -39,24 +39,24 @@
     "@storybook/react": "^5.1.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.2.2",
+    "@babel/core": "^7.4.5",
     "@babel/plugin-syntax-dynamic-import": "^7.2.0",
-    "@storybook/addons": "^5.1.0",
+    "@storybook/addons": "^5.1.9",
     "@storybook/react": "^5.1.0",
-    "assume": "^2.1.0",
-    "babel-eslint": "^10.0.1",
-    "babel-loader": "^8.0.5",
+    "assume": "^2.2.0",
+    "babel-eslint": "^10.0.2",
+    "babel-loader": "^8.0.6",
     "eslint": "^5.14.1",
     "eslint-config-godaddy-react": "^4.1.0",
     "eslint-plugin-json": "^1.2.0",
     "eslint-plugin-jsx-a11y": "^6.2.1",
     "eslint-plugin-mocha": "^5.0.0",
     "eslint-plugin-react": "^7.6.1",
-    "mocha": "^6.0.0",
-    "nyc": "^13.3.0",
-    "prop-types": "^15.6.0",
-    "react": "^16.6.0",
-    "react-dom": "^16.6.0"
+    "mocha": "^6.1.4",
+    "nyc": "^14.1.1",
+    "prop-types": "^15.7.2",
+    "react": "^16.8.3",
+    "react-dom": "16.8.3"
   },
   "babel": {
     "plugins": [
