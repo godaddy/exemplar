@@ -5,11 +5,9 @@
   "description": "End to end sample usage for @exemplar/storybook-react{,-native}",
   "main": "src/design-system.js",
   "scripts": {
-    "exemplar": "node bin/start-exemplar.js",
-    "storybook": "start-storybook -c ./node_modules/@exemplar/storybook-react"
-  },
-  "bin": {
-    "start-exemplar": "bin/start-exemplar.js"
+    "storybook": "start-storybook -c ./node_modules/@exemplar/storybook-react",
+    "storybook:ios": "exemplar-native --platform ios",
+    "storybook:android": "exemplar-native --platform android"
   },
   "repository": {
     "type": "git",

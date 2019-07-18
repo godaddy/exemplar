@@ -1,13 +1,14 @@
-# `@exemplar/native-storybook`
+# `@exemplar/storybook-react-native`
 
-Run React Native storybook through exemplar for a React Component.
+Run React Native Storybook for a React Component that's using the consistent
+example structure defined by exemplar.
 
 ### Install
 
-Add `@exemplar/native-storybook` to your dependencies.
+Add `@exemplar/storybook-react-native` to your dependencies.
 
 ```bash
-npm i --save-dev @exemplar/native-storybook
+npm i --save-dev @exemplar/storybook-react-native
 ```
 
 Add ios and android run scripts to your `package.json`:
@@ -15,15 +16,16 @@ Add ios and android run scripts to your `package.json`:
 ``` js
 {
   "scripts": {
-    "storybook:native:ios": "exemplar-native --platform ios",
-    "storybook:native:android": "exemplar-native --platform android"
+    "storybook:ios": "exemplar-native --platform ios",
+    "storybook:android": "exemplar-native --platform android"
   }
 }
 ```
 
 ### CLI flags
 
-The `exemplar-native` CLI supports the following flags.
+The `exemplar-native` CLI supports the following flags:
+
 - `--platform`: define the platform to use, defaults to `ios`.
 - `--entry`: define a custom path for the storybook examples, defaults to `[cwd]/examples/native`.
 
@@ -32,4 +34,4 @@ The `exemplar-native` CLI supports the following flags.
 Before you can run storybook you will need create some `@exemplar` style
 examples: see the [example structure in a nutshell].
 
-[example structure in a nutshell]: ../../examples/README.md
+[example structure in a nutshell]: ../exemplar-sample/README.md#readme
