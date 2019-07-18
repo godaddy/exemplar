@@ -8,7 +8,7 @@
     "test": "nyc mocha test.js"
   },
   "bin": {
-    "exemplar-native": "bin/start"
+    "start-exemplar-native": "bin/start"
   },
   "repository": {
     "type": "git",

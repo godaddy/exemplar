@@ -33,7 +33,7 @@ Text.defaultProps = {
   design: 'blue'
 };
 
-export default {
+export {
   Text,
   Button
 }

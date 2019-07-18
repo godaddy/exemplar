@@ -1,0 +1,58 @@
+{
+  "name": "@exemplar/sample",
+  "version": "0.0.0",
+  "private": "true",
+  "description": "End to end sample usage for @exemplar/storybook-react{,-native}",
+  "main": "src/design-system.js",
+  "scripts": {
+    "exemplar": "node bin/start-exemplar.js",
+    "storybook": "start-storybook -c ./node_modules/@exemplar/storybook-react"
+  },
+  "bin": {
+    "start-exemplar": "bin/start-exemplar.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/godaddy/exemplar.git"
+  },
+  "keywords": [
+    "storybook",
+    "react",
+    "examples",
+    "stories",
+    "preview"
+  ],
+  "author": "GoDaddy.com Operating Company, LLC",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/godaddy/exemplar/issues"
+  },
+  "homepage": "https://github.com/godaddy/exemplar/tree/master/packages/exemplar-sample",
+  "dependencies": {
+    "@exemplar/storybook-react": "*",
+    "@exemplar/storybook-react-native": "*",
+    "@storybook/addons": "^5.1.9",
+    "@storybook/react": "^5.1.0",
+    "prop-types": "^15.7.2",
+    "react": "^16.8.3",
+    "react-dom": "16.8.3",
+    "webpack": "^4.28.4"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.4.5",
+    "@babel/plugin-syntax-dynamic-import": "^7.2.0",
+    "babel-eslint": "^10.0.2",
+    "babel-loader": "^8.0.6",
+    "node-sass": "^4.12.0",
+    "sass-loader": "^7.1.0"
+  },
+  "babel": {
+    "plugins": [
+      "@babel/plugin-syntax-dynamic-import"
+    ],
+    "presets": [
+      "@babel/env",
+      "@babel/react"
+    ]
+  }
+}
