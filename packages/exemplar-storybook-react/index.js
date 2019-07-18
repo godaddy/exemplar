@@ -92,7 +92,8 @@ exports.config = function config(entry = []) {
   //
   let fullpath = definitions.EX_SETUP_CONFIG;
   try {
-    let config = require.resolve(fullpath);
+    // TODO: remove ugly hack. Normalize internal data structures
+    let config = require.resolve(fullpath.replace(/'/g, ''));
     allConfigs.unshift(config);
   } catch (ex) {
     debug(`Error loading config ${fullpath}:`, ex);
@@ -112,7 +113,8 @@ exports.addons = function addons(entry = []) {
   //
   let fullpath = definitions.EX_SETUP_ADDONS;
   try {
-    addons = require.resolve(fullpath);
+    // TODO: remove ugly hack. Normalize internal data structures
+    addons = require.resolve(fullpath.replace(/'/g, ''));
   } catch (ex) {
     debug(`Error loading addons ${fullpath}:`, ex);
     return entry;
