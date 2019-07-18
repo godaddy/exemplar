@@ -1,5 +1,5 @@
 {
-  "name": "@exemplar/native-storybook",
+  "name": "@exemplar/storybook-react-native",
   "version": "1.0.1",
   "scripts": {
     "lint": "eslint-godaddy-react bin/*.js *.js ./storybook/*.js --no-ignore",
@@ -10,6 +10,24 @@
   "bin": {
     "exemplar-native": "bin/start"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/godaddy/exemplar.git"
+  },
+  "keywords": [
+    "storybook",
+    "react",
+    "react-native",
+    "examples",
+    "stories",
+    "preview"
+  ],
+  "author": "GoDaddy.com Operating Company, LLC",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/godaddy/exemplar/issues"
+  },
+  "homepage": "https://github.com/godaddy/exemplar/tree/master/packages/exemplar-storybook-react-native",
   "dependencies": {
     "argh": "^1.0.0",
     "react": "^16.8.3",

@@ -23,7 +23,7 @@ function assumeBuildStorybook(config) {
   };
 }
 
-describe('@exemplar/storybook', function () {
+describe('@exemplar/storybook-react', function () {
   this.timeout(60 * 1000);
 
   beforeEach(done => {
