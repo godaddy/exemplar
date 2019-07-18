@@ -13,7 +13,7 @@ describe('@exemplar/storybook-react-native', function () {
   });
 
   it('generates metro config', function () {
-    const { metro } = generate('..//exemplar-sample/examples/native');
+    const { metro } = generate('../exemplar-sample/examples/native');
 
     assume(metro).contains('watchFolders');
     assume(metro).contains('exemplar/packages/exemplar-storybook-react-native');
