@@ -6,8 +6,8 @@
   "main": "src/design-system.js",
   "scripts": {
     "storybook": "start-storybook -c ./node_modules/@exemplar/storybook-react",
-    "storybook:ios": "exemplar-native --platform ios",
-    "storybook:android": "exemplar-native --platform android"
+    "storybook:ios": "start-exemplar-react-native --platform ios",
+    "storybook:android": "start-exemplar-react-native --platform android"
   },
   "repository": {
     "type": "git",
