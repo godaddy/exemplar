@@ -21,6 +21,14 @@ module.exports = function config({ config: webpackConfig }) {
     });
   }
 
+  // Workaround for npm's fs package
+  webpackConfig.node = {
+    console: true,
+    fs: "empty",
+    net: "empty",
+    tls: "empty"
+  }
+  
   // Define the paths that exemplar will attempt to load
   webpackConfig.plugins.push(new DefinePlugin(definitions));
 
