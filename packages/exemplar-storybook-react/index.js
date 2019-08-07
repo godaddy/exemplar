@@ -90,17 +90,17 @@ exports.config = function config(entry = []) {
   // confusing to newcomers more familiar with Storybook
   // itself.
   //
-  let fullpath = definitions.EX_SETUP_CONFIG;
+  const fullpath = definitions.EX_SETUP_CONFIG;
   try {
     // TODO: remove ugly hack. Normalize internal data structures
-    let config = require.resolve(fullpath.replace(/'/g, ''));
+    const config = require.resolve(fullpath.replace(/'/g, ''));
     allConfigs.unshift(config);
   } catch (ex) {
     debug(`Error loading config ${fullpath}:`, ex);
   }
 
   return [...entry, ...allConfigs];
-}
+};
 
 exports.addons = function addons(entry = []) {
   let addons;
@@ -111,7 +111,7 @@ exports.addons = function addons(entry = []) {
   // confusing to newcomers more familiar with Storybook
   // itself.
   //
-  let fullpath = definitions.EX_SETUP_ADDONS;
+  const fullpath = definitions.EX_SETUP_ADDONS;
   try {
     // TODO: remove ugly hack. Normalize internal data structures
     addons = require.resolve(fullpath.replace(/'/g, ''));
@@ -121,4 +121,4 @@ exports.addons = function addons(entry = []) {
   }
 
   return [...entry, addons];
-}
+};
