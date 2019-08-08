@@ -6,7 +6,7 @@ keep it up-to-spec with the latest developments in `@exemplar`, and use every pa
 
 The base structure of this directory as follows:
 
-``` bash
+```
 examples/
   # Stories
   *.js          # Runs on all platforms
