@@ -34,6 +34,9 @@
     "diagnostics": "^1.1.1",
     "webpack": "^4.28.4"
   },
+  "publishConfig": {
+    "access": "public"
+  },
   "peerDependencies": {
     "@storybook/addons": "^5.1.0",
     "@storybook/react": "^5.1.0"
