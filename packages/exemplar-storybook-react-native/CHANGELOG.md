@@ -4,6 +4,10 @@
 
 - Rename from `@exemplar/native-storybook` for clarity around purpose & scope.
 
+### @exemplar/native-storybook@1.0.1
+
+- Properly publish all files from `1.0.0`.
+
 ### @exemplar/native-storybook@1.0.0
 
 - [#8] Initial setup of `@exemplar/storybook-react-native` 
