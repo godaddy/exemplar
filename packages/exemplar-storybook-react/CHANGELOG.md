@@ -1,5 +1,12 @@
 # CHANGELOG
 
+### 1.1.0
+
+- Migrate to full Storybook preset based workflow. This is implemented
+  as as backwards compatible. It is trivial since the backwards
+  compatibility is preset is simply a `presets.js` 
+  file requiring `./index.js`. 
+
 ### 1.0.0
 
 - Rename from `@exemplar/storybook-react` for clarity around purpose & scope.
