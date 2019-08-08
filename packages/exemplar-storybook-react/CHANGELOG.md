@@ -4,11 +4,11 @@
 
 - Rename from `@exemplar/storybook-react` for clarity around purpose & scope.
 
-### @exemplar/storybook-react@2.0.0
+### @exemplar/storybook@2.0.0
 
 - Update to `storybook/react@5`
 
-### @exemplar/storybook-react@1.0.0
+### @exemplar/storybook@1.0.0
 
 - [#6] Initial open source release
 
