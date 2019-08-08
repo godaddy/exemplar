@@ -27,7 +27,7 @@ examples/
 To see how `@exemplar` works just install dependencies and run the appropriate
 `npm` script:
 
-```
+``` bash
 # Install dependencies
 npm install
 
