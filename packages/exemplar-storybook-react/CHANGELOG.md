@@ -2,7 +2,7 @@
 
 ### 1.0.0
 
-- Rename from `@exemplar/storybook` for clarity around purpose & scope.
+- Rename from `@exemplar/storybook-react` for clarity around purpose & scope.
 
 ### @exemplar/storybook-react@2.0.0
 
