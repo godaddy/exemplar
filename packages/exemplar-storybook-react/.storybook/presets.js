@@ -1,4 +1,6 @@
 //
 // Shim publicly exposed module
 //
-module.exports = require('../presets.js');
+module.exports = [
+  require.resolve('../index.js')
+];
