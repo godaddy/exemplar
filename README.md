@@ -53,7 +53,7 @@ examples/
     shared.scss  # Global styles
 ```
 
-Checkout our [`examples` directory][examples] for a starter project.
+Checkout our [`examples` directory][packages] for a starter project.
 
 ## Local Development & Releases
 
