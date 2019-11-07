@@ -25,6 +25,7 @@
   "bugs": {
     "url": "https://github.com/godaddy/exemplar/issues"
   },
+  "private": true,
   "homepage": "https://github.com/godaddy/exemplar/tree/master/packages/exemplar-sample",
   "dependencies": {
     "@exemplar/storybook-react": "^1.1.0",
