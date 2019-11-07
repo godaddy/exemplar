@@ -31,7 +31,10 @@
   },
   "homepage": "https://github.com/godaddy/exemplar/tree/master/packages/exemplar-storybook-react",
   "dependencies": {
+    "babel-loader": "^8.0.6",
     "diagnostics": "^1.1.1",
+    "node-sass": "^4.13.0",
+    "sass-loader": "^8.0.0",
     "webpack": "^4.28.4"
   },
   "publishConfig": {
@@ -48,7 +51,6 @@
     "@storybook/react": "^5.1.0",
     "assume": "^2.2.0",
     "babel-eslint": "^10.0.2",
-    "babel-loader": "^8.0.6",
     "eslint": "^5.14.1",
     "eslint-config-godaddy-react": "^4.1.0",
     "eslint-plugin-json": "^1.2.0",
