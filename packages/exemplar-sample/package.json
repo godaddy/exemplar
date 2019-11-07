@@ -1,6 +1,6 @@
 {
   "name": "@exemplar/sample",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "private": true,
   "description": "End to end sample usage for @exemplar/storybook-react{,-native}",
   "main": "src/design-system.js",
@@ -27,7 +27,7 @@
   },
   "homepage": "https://github.com/godaddy/exemplar/tree/master/packages/exemplar-sample",
   "dependencies": {
-    "@exemplar/storybook-react": "^1.1.1",
+    "@exemplar/storybook-react": "^1.1.2",
     "@exemplar/storybook-react-native": "^1.0.2",
     "@storybook/addon-knobs": "^5.1.9",
     "@storybook/addons": "^5.1.9",
