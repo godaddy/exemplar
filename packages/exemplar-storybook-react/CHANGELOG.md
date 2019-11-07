@@ -1,5 +1,9 @@
 # CHANGELOG
 
+### 1.1.1
+
+- Add missing `dependencies`.
+
 ### 1.1.0
 
 - Migrate to full Storybook preset based workflow. This is implemented
