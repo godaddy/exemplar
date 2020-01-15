@@ -101,24 +101,3 @@ exports.config = function config(entry = []) {
 
   return [...entry, ...allConfigs];
 };
-
-exports.addons = function addons(entry = []) {
-  let addons;
-
-  //
-  // Remark (indexzero): could optionally attempt
-  // to load `configDir/addons.js` here to be less
-  // confusing to newcomers more familiar with Storybook
-  // itself.
-  //
-  const fullpath = definitions.EX_SETUP_ADDONS;
-  try {
-    // TODO: remove ugly hack. Normalize internal data structures
-    addons = require.resolve(fullpath.replace(/'/g, ''));
-  } catch (ex) {
-    debug(`Error loading addons ${fullpath}:`, ex);
-    return entry;
-  }
-
-  return [...entry, addons];
-};

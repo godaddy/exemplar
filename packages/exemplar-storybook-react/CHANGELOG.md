@@ -1,5 +1,7 @@
 # CHANGELOG
 
+- [MAJOR] Remove `addons` method as Storybook 5.x behaves differently with addons.
+
 ### 1.1.1
 
 - Add missing `dependencies`.
