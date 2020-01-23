@@ -1,6 +1,6 @@
 {
   "name": "@exemplar/storybook-react",
-  "version": "1.2.0",
+  "version": "2.0.0",
   "description": "Documentation Rocket Fuel for your components using Storybook.",
   "main": "index.js",
   "scripts": {
@@ -35,7 +35,7 @@
     "css-loader": "^3.2.0",
     "diagnostics": "^1.1.1",
     "node-sass": "^4.13.0",
-    "sass-loader": "^7.3.1",
+    "sass-loader": "^8.0.0",
     "style-loader": "^1.0.0",
     "webpack": "^4.28.4"
   },
@@ -50,7 +50,7 @@
     "@babel/core": "^7.4.5",
     "@babel/plugin-syntax-dynamic-import": "^7.2.0",
     "@storybook/addons": "^5.1.9",
-    "@storybook/react": "5.2.8",
+    "@storybook/react": "^5.1.0",
     "assume": "^2.2.0",
     "babel-eslint": "^10.0.2",
     "eslint": "^5.14.1",
