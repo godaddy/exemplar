@@ -1,6 +1,7 @@
 # CHANGELOG
 
 - [MAJOR] Remove `addons` method as Storybook 5.x behaves differently with addons.
+- Lock storybook to `5.2.8` and `sass-loader` at `7.x`.
 
 ### 1.1.1
 
