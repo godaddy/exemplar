@@ -81,6 +81,7 @@ exports.config = function config(entry = []) {
   // Always include our default config for loading examples
   const allConfigs = [require.resolve('./load-examples')];
   
+  // sometimes entry is passed an object.
   if(!Array.isArray(entry)) {
     entry = [ entry ];
   }
