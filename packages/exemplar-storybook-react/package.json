@@ -34,7 +34,7 @@
     "babel-loader": "^8.0.6",
     "css-loader": "^3.2.0",
     "diagnostics": "^1.1.1",
-    "node-sass": "^4.13.0",
+    "node-sass": "^7.0.0",
     "sass-loader": "^7.3.1",
     "style-loader": "^1.0.0",
     "webpack": "^4.28.4"
