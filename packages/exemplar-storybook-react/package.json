@@ -31,7 +31,7 @@
   },
   "homepage": "https://github.com/godaddy/exemplar/tree/master/packages/exemplar-storybook-react",
   "dependencies": {
-    "babel-loader": "^8.0.6",
+    "babel-loader": "^8.2.5",
     "css-loader": "^3.2.0",
     "diagnostics": "^1.1.1",
     "node-sass": "^4.13.0",
