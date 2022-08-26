@@ -36,7 +36,7 @@
     "diagnostics": "^1.1.1",
     "node-sass": "^4.13.0",
     "sass-loader": "^7.3.1",
-    "style-loader": "^1.0.0",
+    "style-loader": "^1.3.0",
     "webpack": "^4.28.4"
   },
   "publishConfig": {
