@@ -1,5 +1,7 @@
 # `@exemplar`
 
+## This package has been deprecated, please look at suggested patterns for [component stories in Storybook](https://storybook.js.org/docs/react/writing-stories/introduction)
+
 :rocket: Documentation [Storybook] rocket fuel for your components.
 
 ## Supported Platforms
